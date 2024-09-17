@@ -9,7 +9,7 @@
 <body>
     <div class="manual-detail-container">
         <!-- Logo en la parte superior izquierda -->
-        <img src="../../Imagenes/Logo.jpg" alt="Logo DSD" class="logo">
+        <img src="../../assets/logo.png" alt="Logo DSD" class="logo">
       
         <!-- Título del manual -->
         <h1>Manual de Perfiles y descripciones de puesto</h1>
@@ -17,18 +17,18 @@
         <!-- Índice del manual -->
         <h2>Indice</h2>
         <div class="indice">
-          <h3>Departamento 1</h3>
+          <h3 (click)="goToDepartment(1)">Departamento 1</h3>
           <ul>
-            <li>Perfil 1</li>
-            <li>Perfil 2</li>
-            <li>Perfil 3</li>
-            <li>Perfil 4</li>
+            <li (click)="goToProfile(1)">Perfil 1</li>
+            <li (click)="goToProfile(2)">Perfil 2</li>
+            <li (click)="goToProfile(3)">Perfil 3</li>
+            <li (click)="goToProfile(4)">Perfil 4</li>
           </ul>
       
-          <h3>Departamento 2</h3>
+          <h3 (click)="goToDepartment(2)">Departamento 2</h3>
           <ul>
-            <li>Perfil 1</li>
-            <li>Perfil 2</li>
+            <li (click)="goToProfile(5)">Perfil 1</li>
+            <li (click)="goToProfile(6)">Perfil 2</li>
           </ul>
         </div>
       

@@ -13,4 +13,7 @@ export class ManualListComponent {
   goToManualDetail() {
     this.router.navigate(['/manual-detail']);  // Navega a la pantalla del manual
   }
+  goToStar(){
+    this.router.navigate(['/home']) // Navega a la pantalla de inicio
+  }
 }

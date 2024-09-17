@@ -11,4 +11,13 @@ export class ManualPYPComponent {
   goBack() {
     this.router.navigate(['/manual-list']);  // Ajusta la ruta según la pantalla a la que quieras volver
   }
+
+  goToDepartment(departmentId: number) {
+    this.router.navigate(['/department', departmentId]);  // Navega a la pantalla del departamento
+  }
+
+  goToProfile(profileId: number) {
+    this.router.navigate(['/profile', profileId]);  // Navega a la pantalla del perfil
+  }
+  
 }

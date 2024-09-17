@@ -12,4 +12,8 @@ export class HomeComponent {
   goToManualList() {
     this.router.navigate(['/manual-list']);
   }
+
+  goToIntro(){
+    this.router.navigate(['/intro'])
+  }
 }

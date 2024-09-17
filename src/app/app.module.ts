@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { IntroComponent } from './intro/intro.component';
 import { ManualListComponent } from './manual-list/manual-list.component';
 import { ManualPYPComponent } from './manual-pyp/manual-pyp.component';
+import { PypDepartmentComponent } from './pyp-department/pyp-department.component';
+import { PypProfileComponent } from './pyp-profile/pyp-profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ManualPYPComponent } from './manual-pyp/manual-pyp.component';
     HomeComponent,
     IntroComponent,
     ManualListComponent,
-    ManualPYPComponent
+    ManualPYPComponent,
+    PypDepartmentComponent,
+    PypProfileComponent
   ],
   imports: [
     BrowserModule,
