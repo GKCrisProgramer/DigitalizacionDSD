@@ -13,4 +13,7 @@ export class IntroComponent {
   goBack() {
     this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
   }
+  goHome() {
+    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+  }
 }

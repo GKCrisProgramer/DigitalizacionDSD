@@ -19,5 +19,9 @@ export class ManualPYPComponent {
   goToProfile(profileId: number) {
     this.router.navigate(['/profile', profileId]);  // Navega a la pantalla del perfil
   }
+
+  goHome() {
+    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+  }
   
 }

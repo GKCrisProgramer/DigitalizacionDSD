@@ -16,4 +16,7 @@ export class ManualListComponent {
   goToStar(){
     this.router.navigate(['/home']) // Navega a la pantalla de inicio
   }
+  goHome() {
+    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+  }
 }

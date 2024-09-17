@@ -16,4 +16,8 @@ export class HomeComponent {
   goToIntro(){
     this.router.navigate(['/intro'])
   }
+
+  goToPYP(){
+    this.router.navigate(['/manual-detail'])
+  }
 }

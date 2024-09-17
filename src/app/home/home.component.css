@@ -24,6 +24,7 @@
   margin-bottom: 20px;
 }
 
+/*Boton de la introduccion*/
 .image-button {
   margin-left: 20px;
   padding: 10px 20px;
@@ -32,6 +33,12 @@
   cursor: pointer;
   box-shadow: 0px 0px 5px 0px #333;
 }
+
+.image-button:hover{
+  background-color: #ccc;
+  box-shadow: 0px 0px 10px 0px #555;
+}
+
  /*Boton de Buscar*/
 .buscar{
   margin-right: 20px;
@@ -42,13 +49,9 @@
   box-shadow: 0px 0px 5px 0px #333;
 }
 
-.buscar{
-  margin-right: 20px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 0px 0px 5px 0px #333;
+.buscar:hover{
+  background-color: #ccc;
+  box-shadow: 0px 0px 10px 0px #555;
 }
 
 .main-image {
@@ -116,4 +119,5 @@
   justify-content: center;
   align-items: center;
   margin: 10px 35px;
+  cursor: default;
 }
