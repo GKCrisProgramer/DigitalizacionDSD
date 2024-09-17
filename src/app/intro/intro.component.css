@@ -1,0 +1,46 @@
+/* Contenedor principal */
+.intro-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px;
+}
+  
+/* Logo en la parte superior izquierda */
+.logo {
+  width: 100px; /* Ajusta el tamaño del logo */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+  
+/* Contenido del texto */
+.text-content {
+  text-align: justify;
+  margin-top: 60px;
+  padding: 20px;
+  line-height: 1.6;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+}
+
+.back{
+  width: 100%;;
+}
+
+/* Enlace "Volver" en la parte inferior izquierda */
+.back-link {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+  

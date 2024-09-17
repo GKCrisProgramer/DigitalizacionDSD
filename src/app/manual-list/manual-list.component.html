@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de manuales</title>
+    <link rel="stylesheet" href="manual-list.component.css">
+</head>
+<body>
+    <div class="manual-list-container">
+        <!-- Logo en la parte superior izquierda -->
+        <img src="../../Imagenes/Logo.jpg" alt="Logo DSD" class="logo">
+      
+        <!-- Lista de manuales -->
+        <div class="manual-list">
+          <button class="manual-button" (click)="goToManualDetail()">Manual de Perfiles y descripciones de puesto</button>
+          <button class="manual-button">Manual de políticas y procedimientos</button>
+          <button class="manual-button">Manual de Procesos</button>
+          <button class="manual-button">Manual de políticas</button>
+          <button class="manual-button">Volver</button>
+        </div>
+      
+        <!-- Botones de Descargar y Selección de Manual -->
+        <div class="manual-actions">
+          <button class="action-button">Descargar</button>
+          <select class="manual-select">
+            <option value="" disabled selected>Seleccione Manual</option>
+            <option value="1">Manual 1</option>
+            <option value="2">Manual 2</option>
+            <!-- Añade más opciones según sea necesario -->
+          </select>
+        </div>
+      </div>      
+</body>
+</html>

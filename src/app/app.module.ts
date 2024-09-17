@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { IntroComponent } from './intro/intro.component';
+import { ManualListComponent } from './manual-list/manual-list.component';
+import { ManualPYPComponent } from './manual-pyp/manual-pyp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    IntroComponent,
+    ManualListComponent,
+    ManualPYPComponent
   ],
   imports: [
     BrowserModule,
