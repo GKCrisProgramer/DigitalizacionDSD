@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  //RUTAS DE MOVIEMIENTO DE LOS BOTONES
   constructor(private router: Router) {}
 
   goToManualList() {

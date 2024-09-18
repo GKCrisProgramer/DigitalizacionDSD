@@ -1,1 +1,30 @@
-<p>pyp-profile works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle</title>
+    <link rel="stylesheet" href="pyp-profile.component.css">
+</head>
+<body>
+      <div class="pdf-container">
+      <img src="/PDFIMG.jpeg" class="" style="display: block;">
+      <!-- comentado para no causar errores a futuro
+       <!--Funcion de la libreria de ng2-pdf-viewer para ver el pdf en cuestion-- .... cerrar aqui el comentario xp
+        <pdf-viewer [src]="pdfSrc" 
+                    [render-text]="true"
+                    style="display: block;"
+                    [original-size]="false"
+                    [show-all]="true"
+                    [fit-to-page]="true">
+        </pdf-viewer>
+      -->
+      </div>
+      
+      <div class="action-buttons">
+        <button class="btn">Descargar</button>
+        <button class="btn" (click)="goBack()">Volver</button>
+      </div>
+      
+</body>
+</html>
