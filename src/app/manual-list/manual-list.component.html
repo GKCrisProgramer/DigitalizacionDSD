@@ -13,11 +13,11 @@
       
         <!-- Lista de manuales -->
         <div class="manual-list">
-          <button class="manual-button" (click)="goToManualDetail()">Manual de Perfiles y descripciones de puesto</button>
+          <button class="manual-button" (click)="goToManualDetail()">Manual de Descriptivos y perfiles de puesto</button>
           <button class="manual-button">Manual de políticas y procedimientos</button>
-          <button class="manual-button">Manual de Procesos</button>
           <button class="manual-button">Manual de políticas</button>
           <button class="manual-button"(click)="goToStar()">Volver</button>
+          <!--<button class="manual-button">Manual de Procesos</button>-->
         </div>
       
         <!-- Botones de Descargar y Selección de Manual -->
@@ -25,8 +25,9 @@
           <button class="action-button">Descargar</button>
           <select class="manual-select">
             <option value="" disabled selected>Seleccione Manual</option>
-            <option value="1">Manual 1</option>
-            <option value="2">Manual 2</option>
+            <option value="1">Manual de Descriptivos y perfiles de puesto</option>
+            <option value="2">Manual de políticas y procedimientos</option>
+            <option value="3">Manual de políticas</option>
             <!-- Añade más opciones según sea necesario -->
           </select>
         </div>
