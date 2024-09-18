@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,6 +8,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './pyp-department.component.css'
 })
 export class PypDepartmentComponent /*implements OnInit*/{
+  constructor(private router: Router) {}
+
+  perfiles = ['Perfil 1', 'Perfil 2', 'Perfil 3', 'Perfil 4', 'Perfil 5', 'Perfil 6', 'Perfil 7', 'Perfil 8'];
+
+  goToProfile(profileId: Number){
+    this.router.navigate(['/profile', profileId])
+  }
+
+  goBack(){
+    this.router.navigate(['/manual-detail'])
+  }
+
+  goHome() {
+    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+  }
   //departmentId: number;
 
   /*constructor(private route: ActivatedRoute) {}
