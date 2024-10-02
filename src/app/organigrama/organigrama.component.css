@@ -1,0 +1,39 @@
+.organigrama-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/*Logo de la parte superior*/
+.logo {
+    width: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo :hover{
+    cursor: pointer; 
+}
+  
+.departamentos-menu {
+    margin-bottom: 20px;
+}
+  
+.departamentos-menu button {
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 3px 0px #555;
+    border-color: none;
+}
+
+.departamentos-menu :hover{
+    background-color: #cccc;
+    box-shadow: 0px 0px 20px #555;
+}
+  
+.organigrama-display img {
+    width: 80%;
+    height: auto;
+    /*border: 1px solid #ccc;*/
+}
+  

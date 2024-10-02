@@ -80,6 +80,10 @@
   font-weight: bold;
 }
 
+.quick-access :hover{
+  cursor: pointer;
+}
+
 /* Botones circulares */
 .circular-buttons {
   display: flex;

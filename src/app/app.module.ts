@@ -11,6 +11,7 @@ import { ManualPYPComponent } from './manual-pyp/manual-pyp.component';
 import { PypDepartmentComponent } from './pyp-department/pyp-department.component';
 import { PypProfileComponent } from './pyp-profile/pyp-profile.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { OrganigramaComponent } from './organigrama/organigrama.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     ManualListComponent,
     ManualPYPComponent,
     PypDepartmentComponent,
-    PypProfileComponent
+    PypProfileComponent,
+    OrganigramaComponent
   ],
   imports: [
     BrowserModule,

@@ -21,4 +21,8 @@ export class HomeComponent {
   goToPYP(){
     this.router.navigate(['/manual-detail'])
   }
+
+  goToOrganigrama(){
+    this.router.navigate(['/organigrama'])
+  }
 }

@@ -23,6 +23,10 @@ export class PypDepartmentComponent /*implements OnInit*/{
   goHome() {
     this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
   }
+
+  gotoOrganigrama() {
+    this.router.navigate(['/organigrama']);  // Cambia '/home' según la ruta deseada
+  }
   //departmentId: number;
 
   /*constructor(private route: ActivatedRoute) {}
