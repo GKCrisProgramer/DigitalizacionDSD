@@ -34,10 +34,18 @@ h2 {
   list-style-type: none;
   padding-left: 0;
 }
+
+.indice ul :hover{
+  cursor: pointer;
+}
   
 .indice li {
   font-size: 18px;
   margin-bottom: 5px;
+}
+
+.indice li :hover{
+  cursor: pointer;
 }
   
 .manual-actions {

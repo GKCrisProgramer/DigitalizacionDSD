@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PypDepartmentComponent /*implements OnInit*/{
   constructor(private router: Router) {}
 
-  perfiles = ['Perfil 1', 'Perfil 2', 'Perfil 3', 'Perfil 4', 'Perfil 5', 'Perfil 6', 'Perfil 7', 'Perfil 8'];
+  perfiles = ['Auditor interno operativo de cedis', 'Auxiliar de inventario', 'Auxiliar de operaciones', 'Compras', 'Aux. Administrativo (Iniciativas)', 'Aux. Administrativo Operaciones CEDIS', 'Capacitador de administrativo de CEDIS', 'estor De Cartera', 'Aux. Administrativo (Cartera)', 'Auditor Interno Operativo de CEDIS', 'Coordinador Logística Kiosko', 'Aux. Administrativo  (Logística Kiosko)'];
 
   goToProfile(profileId: Number){
     this.router.navigate(['/profile', profileId])
