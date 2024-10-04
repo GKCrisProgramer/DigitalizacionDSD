@@ -7,27 +7,26 @@
 </head>
 <link rel="stylesheet" href="pyp-department.component.css">
 <body>
-    <div class="container">
-      <!--parte superior del logo y el titulo-->
-        <header>
-          <!--logo que te llevan al inicio-->
-          <img src="/logo.png" alt="Logo de la empresa" class="logo" (click)="goHome()">
-          <h1>Manual de Perfiles y descripciones de puesto</h1>
-          <h2>Sac</h2>
-        </header>
-        
-        <div class="profiles-grid">
-          <!--funcion que te lleva a los perfiles seleccionados po ID-->
-          <button class="profile-btn" *ngFor="let perfil of perfiles" (click)="goToProfile(1)">{{ perfil }}</button>
-        </div>
+  <div class="container">
+    <!--parte superior del logo y el titulo-->
+    <header>
+      <!--logo que te llevan al inicio-->
+      <img src="/logo.png" alt="Logo de la empresa" class="logo" (click)="goHome()">
+      <h1>Manual de Perfiles y descripciones de puesto</h1>
+      <h2>Sac</h2>
+    </header>
       
-        <div class="action-buttons">
-          <!--Botones de acciones-->
-          <button class="btn" (click)="goBack()">Volver</button>
-          <button class="btn">Descargar</button>
-          <button class="btn" (click)="gotoOrganigrama()">Organigrama</button>
-        </div>
-      </div>
-      
+    <div class="profiles-grid">
+      <!--funcion que te lleva a los perfiles seleccionados po ID-->
+      <button class="profile-btn" *ngFor="let perfil of perfiles" (click)="goToProfile(1)">{{ perfil }}</button>
+    </div>
+    
+    <div class="action-buttons">
+      <!--Botones de acciones-->
+      <button class="btn" (click)="goBack()">Volver</button>
+      <button class="btn">Descargar</button>
+      <button class="btn" (click)="gotoOrganigrama()">Organigrama</button>
+    </div>
+  </div>     
 </body>
 </html>

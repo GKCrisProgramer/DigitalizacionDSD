@@ -1,9 +1,9 @@
 /*Contenedor de los botones principales*/
 .manual-list-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 /*Logo de la parte superior*/
 .logo {

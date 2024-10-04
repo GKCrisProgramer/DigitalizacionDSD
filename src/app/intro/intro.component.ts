@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./intro.component.css']
 })
 export class IntroComponent {
-
   constructor(private router: Router) {}
 
   goBack() {

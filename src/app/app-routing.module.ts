@@ -10,6 +10,8 @@ import { PypProfileComponent } from './pyp-profile/pyp-profile.component';
 import { OrganigramaComponent } from './organigrama/organigrama.component'
 
 const routes: Routes = [
+  //agregar esta ruta
+  // =>{ path: 'login', component: LoginComponent },
   { path: 'intro', component: IntroComponent },
   { path: 'home', component: HomeComponent },
   { path: 'manual-list', component: ManualListComponent },
@@ -19,11 +21,14 @@ const routes: Routes = [
   { path: 'department/:id', component:PypDepartmentComponent },
   { path: 'profile/:id', component: PypProfileComponent },
 
+  //ruta de organigram
+  { path: 'organigrama', component: OrganigramaComponent },
+
   //ruta principal
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // cambiar a esta ruta cuando este lista
+  //=> { path: '', redirectTo: '/login', pathMatch: 'full' }
 
-  //ruta de organigram
-  { path: 'organigrama', component: OrganigramaComponent }
 ];
 
 @NgModule({

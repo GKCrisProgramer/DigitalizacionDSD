@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organigrama</title>
-    <link rel="stylesheet" href="organigrama.component.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organigrama</title>
+  <link rel="stylesheet" href="organigrama.component.css">
 </head>
 <body>
-    <div class="organigrama-container">
-        <!-- Logo en la parte superior izquierda -->
-        <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
-        
-        <nav class="departamentos-menu">
-          <button *ngFor="let departamento of departamentos" (click)="cambiarOrganigrama(departamento)">
-            {{ departamento.nombre }}
-          </button>
-        </nav>
+  <div class="organigrama-container">
+    <!-- Logo en la parte superior izquierda -->
+    <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
       
-        <div class="organigrama-display">
-          <img *ngIf="organigramaSeleccionado" [src]="organigramaSeleccionado" alt="Organigrama">
-        </div>
-    </div>          
+    <nav class="departamentos-menu">
+      <button *ngFor="let departamento of departamentos" (click)="cambiarOrganigrama(departamento)">
+        {{ departamento.nombre }}
+      </button>
+    </nav>
+    
+    <div class="organigrama-display">
+      <img *ngIf="organigramaSeleccionado" [src]="organigramaSeleccionado" alt="Organigrama">
+    </div>
+  </div>          
 </body>
 </html>

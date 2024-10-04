@@ -7,48 +7,48 @@
     <link rel="stylesheet" href="home.component.css">
 </head>
 <body>
-    <div class="home-container">
-        <div class="Cont-mess">
-        <!--Titulo de la pagina-->
-          <h1 class="welcome-message">Bienvenido al manual organizacional de DSD</h1>
-        </div>
-        <div class="image-section">
-            <!--ZONA DE BOTON QUE TE ENVIA A LA PESTAÑA DE INTRODUCCION-->
-            <div class="int-but">
-                <button class="image-button" (click)="goToIntro()">Introduccion</button>
-            </div>
-            <!--IMAGEN DE LA EMPRESA-->
-            <div>
-                <img src="/logo.png" alt="Imagen Representativa" class="main-image">
-            </div>
-            <!--ZONA DE BUSQUEDA PARA LOS MANUALES-->
-            <div>
-                <button class="buscar" (click)="goToManualList()">Buscar</button>
-            </div>
-        </div>
-        <!--TITULO DE LOS ENLACES MOVIMIENTO RAPIDO-->
-        <div class="subtitle-section">
-          <h2>Acceso Rapidos</h2>
-        </div>
-        <!--Enlaces para las otras pantallas de organigramas y perfiles-->
-        <div class="quick-access">
-          <a (click)="goToOrganigrama()">Organigrama</a>
-          <a href="#">Perfiles</a>
-        </div>
-        <!--botones de envio a manuales-->
-        <div class="circular-buttons">
-          <button class="circular-button"><img src="/panel-de-control.png" alt="icon" class="display-settings-icon"></button>
-          <button class="circular-button" (click)="goToPYP()"><img src="/curriculum-vitae.png" alt="icon" class="display-settings-icon"></button>
-          <button class="circular-button"><img src="/politica.png" alt="icon" class="display-settings-icon"></button>
-          <!--<button class="circular-button"><img src="/proceso.png" alt="icon" class="display-settings-icon"></button>-->
-          <!--<button class="circular-button">5</button>-->
-        </div>
-        <div>
-            <p class="txtb">M.D.P.P</p>
-            <p class="txtb">M.P&P</p>
-            <p class="txtb">M.POL</p>
-            <!--<p class="txtb">M.P.R</p>-->
-        </div>
-      </div>      
+  <div class="home-container">
+    <div class="Cont-mess">
+    <!--Titulo de la pagina-->
+      <h1 class="welcome-message">Bienvenido al manual organizacional de DSD</h1>
+    </div>
+    <div class="image-section">
+      <!--ZONA DE BOTON QUE TE ENVIA A LA PESTAÑA DE INTRODUCCION-->
+      <div class="int-but">
+        <button class="image-button" (click)="goToIntro()">Introduccion</button>
+      </div>
+      <!--IMAGEN DE LA EMPRESA-->
+      <div>
+        <img src="/logo.png" alt="Imagen Representativa" class="main-image">
+      </div>
+      <!--ZONA DE BUSQUEDA PARA LOS MANUALES-->
+      <div>
+        <button class="buscar" (click)="goToManualList()">Buscar</button>
+      </div>
+    </div>
+    <!--TITULO DE LOS ENLACES MOVIMIENTO RAPIDO-->
+    <div class="subtitle-section">
+      <h2>Acceso Rapidos</h2>
+    </div>
+    <!--Enlaces para las otras pantallas de organigramas y perfiles-->
+    <div class="quick-access">
+      <a (click)="goToOrganigrama()">Organigrama</a>
+      <a href="#">Perfiles</a>
+    </div>
+    <!--botones de envio a manuales-->
+    <div class="circular-buttons">
+      <button class="circular-button"><img src="/panel-de-control.png" alt="icon" class="display-settings-icon"></button>
+      <button class="circular-button" (click)="goToPYP()"><img src="/curriculum-vitae.png" alt="icon" class="display-settings-icon"></button>
+      <button class="circular-button"><img src="/politica.png" alt="icon" class="display-settings-icon"></button>
+      <!--<button class="circular-button"><img src="/proceso.png" alt="icon" class="display-settings-icon"></button>-->
+      <!--<button class="circular-button">5</button>-->
+    </div>
+    <div>
+      <p class="txtb">M.D.P.P</p>
+      <p class="txtb">M.P&P</p>
+      <p class="txtb">M.POL</p>
+      <!--<p class="txtb">M.P.R</p>-->
+    </div>
+  </div>      
 </body>
 </html>
