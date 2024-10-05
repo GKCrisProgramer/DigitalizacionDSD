@@ -12,6 +12,7 @@ import { PypDepartmentComponent } from './pyp-department/pyp-department.componen
 import { PypProfileComponent } from './pyp-profile/pyp-profile.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { OrganigramaComponent } from './organigrama/organigrama.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { OrganigramaComponent } from './organigrama/organigrama.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    PdfViewerModule
+    PdfViewerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

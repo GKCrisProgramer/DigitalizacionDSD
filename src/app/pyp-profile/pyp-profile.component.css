@@ -5,6 +5,11 @@
   align-items: center;
   display: block;
 }
+
+.centrar{
+  text-align: center;
+}
+
 /*Botones de accion*/
 .action-buttons {
   display: flex;

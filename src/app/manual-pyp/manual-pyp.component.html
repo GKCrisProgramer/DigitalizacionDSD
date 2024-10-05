@@ -17,27 +17,23 @@
     <!-- Índice del manual -->
     <h2>Indice</h2>
     <div class="indice">
-      <h3 (click)="goToDepartment(1)">SAC</h3>
       <ul>
-        <li (click)="goToProfile(1)">Auditor interno operativo de cedis</li>
-        <li (click)="goToProfile(2)">Auxiliar de inventario</li>
-        <li (click)="goToProfile(3)">Auxiliar de operaciones</li>
-        <li (click)="goToProfile(4)">Compras</li>
-        <li (click)="goToProfile(5)">Aux. Administrativo (Iniciativas)</li>
-        <li (click)="goToProfile(6)">Aux. Administrativo Operaciones CEDIS</li>
-        <li (click)="goToProfile(7)">Capacitador de administrativo de CEDIS</li>
-        <li (click)="goToProfile(8)">Gestor De Cartera</li>
-        <li (click)="goToProfile(9)">Aux. Administrativo (Cartera)</li>
-        <li (click)="goToProfile(10)">Auditor Interno Operativo de CEDIS</li>
-        <li (click)="goToProfile(11)">Coordinador Logística Kiosko</li>
-        <li (click)="goToProfile(12)">Aux. Administrativo  (Logística Kiosko)</li>
-      </ul>
+        <li *ngFor="let departamento of departamentos">
+          <div (click)="togglePuestos(departamento.ID_Departamento)">
+            {{ departamento.Departamento_Nombre }}
+          </div>
     
-      <!-- <h3 (click)="goToDepartment(2)">Departamento 2</h3>
-      <ul>
-        <li (click)="goToProfile(21)">Perfil 1</li>
-        <li (click)="goToProfile(22)">Perfil 2</li>
-      </ul> -->
+          <ul *ngIf="departamentoSeleccionado === departamento.ID_Departamento">
+            <li *ngFor="let puesto of puestos" (click)="onPuestoSeleccionado(puesto.ID_Puestos)" class="select">
+              {{ puesto.Puestos_Nombre }}
+            </li>
+          </ul>
+    
+          <div *ngIf="departamentoSeleccionado === departamento.ID_Departamento && puestos.length === 0">
+            No hay puestos para este departamento.
+          </div>
+        </li>
+      </ul>
     </div>
       
     <!-- Botones de Volver y Descargar -->

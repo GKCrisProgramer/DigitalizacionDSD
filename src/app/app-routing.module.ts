@@ -19,7 +19,8 @@ const routes: Routes = [
 
   // Rutas dinámicas para departamentos y perfiles
   { path: 'department/:id', component:PypDepartmentComponent },
-  { path: 'profile/:id', component: PypProfileComponent },
+  { path: 'profile/:idPuesto', component: PypProfileComponent },
+  //{ path: 'desplegable-manual/:idPuesto', component: PypProfileComponent },
 
   //ruta de organigram
   { path: 'organigrama', component: OrganigramaComponent },
