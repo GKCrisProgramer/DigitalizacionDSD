@@ -31,24 +31,47 @@
       <h2>Acceso Rapidos</h2>
     </div>
     <!--Enlaces para las otras pantallas de organigramas y perfiles-->
-    <div class="quick-access">
+    <!-- <div class="quick-access">
       <a (click)="goToOrganigrama()">Organigrama</a>
       <a href="#">Perfiles</a>
-    </div>
+    </div> -->
     <!--botones de envio a manuales-->
     <div class="circular-buttons">
-      <button class="circular-button" (click)="goToPYP()"><img src="/panel-de-control.png" alt="icon" class="display-settings-icon"></button>
-      <button class="circular-button"><img src="/curriculum-vitae.png" alt="icon" class="display-settings-icon"></button>
-      <button class="circular-button"><img src="/politica.png" alt="icon" class="display-settings-icon"></button>
-      <!--<button class="circular-button"><img src="/proceso.png" alt="icon" class="display-settings-icon"></button>-->
-      <!--<button class="circular-button">5</button>-->
-    </div>
-    <div>
-      <p class="txtb">M.D.P.P</p>
-      <p class="txtb">M.P&P</p>
-      <p class="txtb">M.POL</p>
-      <!--<p class="txtb">M.P.R</p>-->
-    </div>
+      <div class="acceso-rapido">
+        <button class="circular-button" (click)="goToOrganigrama()">
+          <img src="/organigrama.png" alt="icon" class="display-settings-icon">
+        </button>
+        <p class="txtb">Organigrama</p>
+      </div>
+    
+      <div class="acceso-rapido">
+        <button class="circular-button" (click)="goToPYP()">
+          <img src="/panel-de-control.png" alt="icon" class="display-settings-icon">
+        </button>
+        <p class="txtb">Manual de Descriptivos y perfiles de puesto</p>
+      </div>
+    
+      <div class="acceso-rapido">
+        <button class="circular-button">
+          <img src="/curriculum-vitae.png" alt="icon" class="display-settings-icon">
+        </button>
+        <p class="txtb">Manual de políticas y procedimientos</p>
+      </div>
+    
+      <div class="acceso-rapido">
+        <button class="circular-button">
+          <img src="/politica.png" alt="icon" class="display-settings-icon">
+        </button>
+        <p class="txtb">Manual de políticas</p>
+      </div>
+    
+      <div class="acceso-rapido">
+        <button class="circular-button" (click)="goToPerfiles()">
+          <img src="/usuario.png" alt="icon" class="display-settings-icon">
+        </button>
+        <p class="txtb">Estructura de puestos por departamentos</p>
+      </div>
+    </div>    
   </div>      
 </body>
 </html>

@@ -72,7 +72,7 @@
   margin-bottom: 20px;
 }
 
-.quick-access a {
+/* .quick-access a {
   display: inline-block;
   margin: 0 10px;
   text-decoration: none;
@@ -82,13 +82,20 @@
 
 .quick-access :hover{
   cursor: pointer;
-}
+} */
 
 /* Botones circulares */
 .circular-buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 40px; /* Espacio entre cada grupo de botón y texto */
+  margin-top: 20px;
+}
+
+.acceso-rapido {
+  display: flex;
+  flex-direction: column; /* Alinea el botón y el texto en columna */
+  align-items: center; /* Centra ambos horizontalmente */
 }
 
 .circular-button {
@@ -101,9 +108,10 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin: 0px 30px;
+  margin-bottom: 10px; /* Espacio entre el botón y el texto */
   box-shadow: 0px 0px 10px #333;
 }
+
 
 .circular-button:hover {
   background-color: #cccc;
@@ -115,13 +123,10 @@
 	height: 50px;
 }
 
-.txtb{
-  width: 80px;
-  height: 80px;
-  font-size: 18px;
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 35px;
-  cursor: default;
+.txtb {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 14px;
+  max-width: 120px; /* Ajusta para que los textos largos no desborden */
+  word-wrap: break-word;
 }

@@ -25,4 +25,8 @@ export class HomeComponent {
   goToOrganigrama(){
     this.router.navigate(['/organigrama'])
   }
+
+  goToPerfiles(){
+    this.router.navigate(['/PerfilesLista'])
+  }
 }

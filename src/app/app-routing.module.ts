@@ -7,7 +7,8 @@ import { ManualListComponent } from './manual-list/manual-list.component';
 import { ManualPYPComponent } from './manual-pyp/manual-pyp.component';
 import { PypDepartmentComponent } from './pyp-department/pyp-department.component';
 import { PypProfileComponent } from './pyp-profile/pyp-profile.component';
-import { OrganigramaComponent } from './organigrama/organigrama.component'
+import { OrganigramaComponent } from './organigrama/organigrama.component';
+import { PerfilesComponent } from './perfiles/perfiles.component';
 
 const routes: Routes = [
   //agregar esta ruta
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'manual-list', component: ManualListComponent },
   { path: 'manual-detail', component: ManualPYPComponent },
+  { path: 'PerfilesLista', component: PerfilesComponent },
 
   // Rutas dinámicas para departamentos y perfiles
   { path: 'department/:id', component:PypDepartmentComponent },
