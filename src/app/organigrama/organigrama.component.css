@@ -1,6 +1,7 @@
 .organigrama-container {
     text-align: center;
     padding: 20px;
+    margin-top: 20px;
 }
 
 /*Logo de la parte superior*/
@@ -11,29 +12,38 @@
     left: 20px;
 }
 
-.logo :hover{
+.logo:hover{
     cursor: pointer; 
 }
   
-.departamentos-menu {
-    margin-bottom: 20px;
-}
-  
-.departamentos-menu button {
+.navbar-container {
+    width: 100%;
+    overflow-x: auto; /* Habilitar el scroll horizontal */
+    white-space: nowrap; /* Evitar que los botones se vayan a la siguiente línea */
     margin: 5px;
     padding: 10px;
-    box-shadow: 0px 0px 3px 0px #555;
-    border-color: none;
-}
-
-.departamentos-menu :hover{
-    background-color: #cccc;
-    box-shadow: 0px 0px 20px #555;
 }
   
-.organigrama-display img {
-    width: 80%;
-    height: auto;
-    /*border: 1px solid #ccc;*/
+.navbar-nav {
+    display: inline-block;
+}
+  
+.nav-item {
+    display: inline-block; /* Mostrar los elementos en línea */
+}
+
+.nav-link-btn-btn-link{
+    background-color: #EFB347;
+    min-height: 60px;
+}
+
+.nav-link-btn-btn-link:hover{
+    background-color: #DEA236;
+    cursor: pointer;
+}
+    
+  
+.pdf-viewer iframe {
+    border: none;
 }
   
