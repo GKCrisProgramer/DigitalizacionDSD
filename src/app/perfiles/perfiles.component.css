@@ -32,6 +32,10 @@ body {
     height: auto;
 }
 
+.logo:hover{
+    cursor: pointer;
+}
+
 .select-departamento {
     padding: 10px;
     font-size: 16px;

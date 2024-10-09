@@ -12,6 +12,9 @@
   top: 20px;
   left: 20px;
 }
+.logo:hover{
+  cursor: pointer;
+}
 /*Lista de manuales*/
 .manual-list {
   margin-top: 60px;

@@ -12,6 +12,10 @@ header {
   height: auto;
   float: left;
 }
+
+.logo:hover{
+  cursor: pointer;
+}
   
 h1, h2 {
   margin: 0;
