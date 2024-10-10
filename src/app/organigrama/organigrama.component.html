@@ -18,6 +18,14 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- Botón General -->
+            <li class="nav-item">
+              <button class="nav-link-btn-btn-link" (click)="verOrganigramaGeneral()">
+                  General
+              </button>
+            </li>
+
+            <!-- Botones de los departamentos -->
             <li class="nav-item" *ngFor="let departamento of departamentos">
               <button class="nav-link-btn-btn-link" (click)="seleccionarDepartamento(departamento.ID_Departamento)">
                 {{ departamento.Departamento_Nombre }}
