@@ -1,22 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-perfiles',
   templateUrl: './perfiles.component.html',
-  styleUrl: './perfiles.component.css'
+  styleUrls: ['./perfiles.component.css'] // Asegúrate que sea style**s**Url si es array
 })
 export class PerfilesComponent implements OnInit{
 
-  departamentos: any[] = []; // Lista de departamentos
-  puestos: any[] = [];       // Lista de puestos para el departamento seleccionado
+  documentoRuta!: SafeResourceUrl;  // Para el enlace seguro del PDF
+  departamentos: any[] = [];        // Lista de departamentos
+  puestos: any[] = [];              // Lista de puestos para el departamento seleccionado
   selectedDepartamento: number | null = null; // ID del departamento seleccionado
-  constructor(private http: HttpClient, private router: Router) {}
+  
+  constructor(
+    private sanitizer: DomSanitizer,
+    private http: HttpClient, 
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
-    this.getDepartamentos(); // Carga los departamentos al inicializar
+    this.getDepartamentos(); // Cargar los departamentos al inicializar
+    
+    // Llamada a la API para obtener el documento con ID 2
+    this.http.get<any>('http://localhost:3000/documentos/2').subscribe(documento => {
+      if (documento && documento.Documentos_RutaLink) {
+        const unsafeUrl = `https://drive.google.com/file/d/${documento.Documentos_RutaLink}/preview`;
+        this.documentoRuta = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
+      }
+    }, error => {
+      console.error('Error al obtener el documento', error);
+    });
   }
 
   // Obtener todos los departamentos desde el backend
@@ -43,10 +59,12 @@ export class PerfilesComponent implements OnInit{
     }
   }
 
+  // Navegar de regreso a 'home'
   goBack() {
-    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+    this.router.navigate(['/home']);  
   }
+  
   goHome() {
-    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+    this.router.navigate(['/home']);  
   }
 }

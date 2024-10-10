@@ -33,9 +33,9 @@
             <p>No hay puestos para este departamento.</p>
         </div>
 
-        <div class="matriz">
-            <img src="/MatrizPuestos1.jpg" alt="">
-            <img src="/MatrizPuestos2.jpg" alt="">
+        <!-- Mostrar el PDF embebido -->
+        <div class="pdf-viewer" *ngIf="documentoRuta">
+            <iframe [src]="documentoRuta" width="100%" height="600px"></iframe>
         </div>
 
         <!-- Botón de volver -->

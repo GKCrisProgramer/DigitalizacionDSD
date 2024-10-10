@@ -59,22 +59,12 @@ body {
     color: #333;
 }
 
-/* Sección para las imágenes de la matriz */
-.matriz {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.matriz img {
-    max-width: 100%; /* Las imágenes no serán más anchas que el contenedor */
-    /* max-height: 500px; Controlamos la altura máxima */
-    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
-    border: 1px solid #ccc; /* Opcional: Añadir borde */
-    border-radius: 5px; /* Opcional: Añadir bordes redondeados */
+/* Sección para las imágenes del pdf */
+.pdf-viewer {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
 }
 
 /* Pie de página con el enlace de volver */
