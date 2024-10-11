@@ -12,7 +12,7 @@ import { PerfilesComponent } from './perfiles/perfiles.component';
 
 const routes: Routes = [
   //agregar esta ruta
-  // =>{ path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'intro', component: IntroComponent },
   { path: 'home', component: HomeComponent },
   { path: 'manual-list', component: ManualListComponent },
@@ -28,9 +28,9 @@ const routes: Routes = [
   { path: 'organigrama', component: OrganigramaComponent },
 
   //ruta principal
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  //{ path: '', redirectTo: '/home', pathMatch: 'full' },
   // cambiar a esta ruta cuando este lista
-  //=> { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
 
 ];
 
