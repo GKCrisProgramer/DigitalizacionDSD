@@ -27,12 +27,4 @@ export class PypDepartmentComponent /*implements OnInit*/{
   gotoOrganigrama() {
     this.router.navigate(['/organigrama']);  // Cambia '/home' según la ruta deseada
   }
-  //departmentId: number;
-
-  /*constructor(private route: ActivatedRoute) {}
-
-  ngOnInit(): void {
-    this.departmentId = +this.route.snapshot.paramMap.get('id');
-    // Aquí podrías hacer una llamada al backend para obtener los detalles del departamento según el ID
-  }*/
 }

@@ -18,18 +18,18 @@
     <h2>Indice</h2>
     <div class="indice">
       <ul>
-        <li *ngFor="let departamento of departamentos">
-          <div (click)="togglePuestos(departamento.ID_Departamento)">
-            {{ departamento.Departamento_Nombre }}
+        <li *ngFor="let department of department">
+          <div (click)="toggleProfile(department.ID_Department)">
+            {{ department.Department_Name }}
           </div>
     
-          <ul *ngIf="departamentoSeleccionado === departamento.ID_Departamento">
-            <li *ngFor="let puesto of puestos" (click)="onPuestoSeleccionado(puesto.ID_Puestos)" class="select">
-              {{ puesto.Puestos_Nombre }}
+          <ul *ngIf="departmentSelected === department.ID_Department">
+            <li *ngFor="let profile of profile" (click)="onProfileSelected(profile.ID_Profile)" class="select">
+              {{ profile.Profile_Name }}
             </li>
           </ul>
     
-          <div *ngIf="departamentoSeleccionado === departamento.ID_Departamento && puestos.length === 0">
+          <div *ngIf="departmentSelected === department.ID_Department && profile.length === 0">
             No hay puestos para este departamento.
           </div>
         </li>

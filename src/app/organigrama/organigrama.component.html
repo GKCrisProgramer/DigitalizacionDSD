@@ -20,15 +20,15 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <!-- Botón General -->
             <li class="nav-item">
-              <button class="nav-link-btn-btn-link" (click)="verOrganigramaGeneral()">
+              <button class="nav-link-btn-btn-link" (click)="seeGeneralOrganizationChart()">
                   General
               </button>
             </li>
 
             <!-- Botones de los departamentos -->
-            <li class="nav-item" *ngFor="let departamento of departamentos">
-              <button class="nav-link-btn-btn-link" (click)="seleccionarDepartamento(departamento.ID_Departamento)">
-                {{ departamento.Departamento_Nombre }}
+            <li class="nav-item" *ngFor="let deparments of deparments">
+              <button class="nav-link-btn-btn-link" (click)="SelectDepartment(deparments.ID_Department)">
+                {{ deparments.Department_Name }}
               </button>
             </li>
           </ul>
@@ -37,13 +37,13 @@
     </div>
     
     <!-- Mensaje si no hay documento -->
-    <div *ngIf="mensaje" class="alert alert-warning mt-3">
-      {{ mensaje }}
+    <div *ngIf="message" class="alert alert-warning mt-3">
+      {{ message }}
     </div>
 
     <!-- Visor de PDF -->
-    <div class="pdf-viewer mt-4" *ngIf="documentoRuta">
-      <iframe [src]="documentoRuta" width="80%" height="500px"></iframe>
+    <div class="pdf-viewer mt-4" *ngIf="documentRoute">
+      <iframe [src]="documentRoute" width="80%" height="500px"></iframe>
     </div>
   </div>          
 </body>

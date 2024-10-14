@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'manual-list', component: ManualListComponent },
   { path: 'manual-detail', component: ManualPYPComponent },
-  { path: 'PerfilesLista', component: PerfilesComponent },
+  { path: 'ProfileList', component: PerfilesComponent },
 
   // Rutas dinámicas para departamentos y perfiles
   { path: 'department/:id', component:PypDepartmentComponent },
@@ -25,7 +25,7 @@ const routes: Routes = [
   //{ path: 'desplegable-manual/:idPuesto', component: PypProfileComponent },
 
   //ruta de organigram
-  { path: 'organigrama', component: OrganigramaComponent },
+  { path: 'organization-chart', component: OrganigramaComponent },
 
   //ruta principal
   //{ path: '', redirectTo: '/home', pathMatch: 'full' },

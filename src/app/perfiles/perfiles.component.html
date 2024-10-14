@@ -13,8 +13,8 @@
             <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
             <select (change)="onDepartamentoChange($event)">
                 <option value="" disabled selected>Seleccione un departamento</option>
-                <option *ngFor="let departamento of departamentos" [value]="departamento.ID_Departamento">
-                  {{ departamento.Departamento_Nombre }}
+                <option *ngFor="let department of department" [value]="department.ID_Department">
+                  {{ department.Department_Name }}
                 </option>
             </select>
         </div>
@@ -23,19 +23,19 @@
         <div class="content">
             <h3>Puestos relacionados:</h3>
             <ul>
-                <li *ngFor="let puesto of puestos"  class="Puestos">
-                {{ puesto.Puestos_Nombre }}
+                <li *ngFor="let profile of profile"  class="Puestos">
+                {{ profile.Profile_Name }}
                 </li>
             </ul>
         </div>
 
-        <div *ngIf="puestos.length === 0 && selectedDepartamento">
+        <div *ngIf="profile.length === 0 && selectedDepartment">
             <p>No hay puestos para este departamento.</p>
         </div>
 
         <!-- Mostrar el PDF embebido -->
-        <div class="pdf-viewer" *ngIf="documentoRuta">
-            <iframe [src]="documentoRuta" width="100%" height="600px"></iframe>
+        <div class="pdf-viewer" *ngIf="documentRoute">
+            <iframe [src]="documentRoute" width="100%" height="600px"></iframe>
         </div>
 
         <!-- Botón de volver -->

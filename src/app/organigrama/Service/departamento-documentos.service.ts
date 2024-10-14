@@ -5,20 +5,20 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class DepartamentoDocumentosService {
+export class DepartmentDocumentService {
 
-  private apiUrl = 'http://localhost:3000/departamento-documento'; // URL de tu API en NestJS
+  private apiUrl = 'http://localhost:3000/department-document'; // URL de tu API en NestJS
 
   constructor(private http: HttpClient) {}
 
   // Obtener la lista de departamentos
-  getDepartamentos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/departamentos`);
+  getDepartments(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/department`);
   }
 
   // Obtener el documento relacionado a un departamento por su ID
-  getDocumentoByDepartamento(idDepartamento: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${idDepartamento}`);
+  getDocumentsbyDepartment(idDepartment: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${idDepartment}`);
   }
   
 }

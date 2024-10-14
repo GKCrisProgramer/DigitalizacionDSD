@@ -19,7 +19,7 @@ export class LoginComponent {
       password: this.password
     };
   
-    this.http.post<any>('http://localhost:3000/users/login', loginData).subscribe(
+    this.http.post<any>('http://localhost:3000/user/login', loginData).subscribe(
       response => {
         if (response.success) {
           this.router.navigate(['/home']);

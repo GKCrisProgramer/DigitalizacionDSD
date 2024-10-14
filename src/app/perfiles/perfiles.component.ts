@@ -10,10 +10,10 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class PerfilesComponent implements OnInit{
 
-  documentoRuta!: SafeResourceUrl;  // Para el enlace seguro del PDF
-  departamentos: any[] = [];        // Lista de departamentos
-  puestos: any[] = [];              // Lista de puestos para el departamento seleccionado
-  selectedDepartamento: number | null = null; // ID del departamento seleccionado
+  documentRoute!: SafeResourceUrl;  // Para el enlace seguro del PDF
+  department: any[] = [];        // Lista de departamentos
+  profile: any[] = [];              // Lista de puestos para el departamento seleccionado
+  selectedDepartment: number | null = null; // ID del departamento seleccionado
   
   constructor(
     private sanitizer: DomSanitizer,
@@ -25,10 +25,10 @@ export class PerfilesComponent implements OnInit{
     this.getDepartamentos(); // Cargar los departamentos al inicializar
     
     // Llamada a la API para obtener el documento con ID 2
-    this.http.get<any>('http://localhost:3000/documentos/2').subscribe(documento => {
-      if (documento && documento.Documentos_RutaLink) {
-        const unsafeUrl = `https://drive.google.com/file/d/${documento.Documentos_RutaLink}/preview`;
-        this.documentoRuta = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
+    this.http.get<any>('http://localhost:3000/document/2').subscribe(document=> {
+      if (document && document.Document_LinkRoute) {
+        const unsafeUrl = `https://drive.google.com/file/d/${document.Document_LinkRoute}/preview`;
+        this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
       }
     }, error => {
       console.error('Error al obtener el documento', error);
@@ -37,9 +37,9 @@ export class PerfilesComponent implements OnInit{
 
   // Obtener todos los departamentos desde el backend
   getDepartamentos() {
-    this.http.get<any[]>('http://localhost:3000/departamento')
+    this.http.get<any[]>('http://localhost:3000/department')
       .subscribe(data => {
-        this.departamentos = data;
+        this.department = data;
       }, error => {
         console.error('Error al obtener los departamentos', error);
       });
@@ -47,12 +47,12 @@ export class PerfilesComponent implements OnInit{
 
   // Obtener los puestos cuando se selecciona un departamento
   onDepartamentoChange(event: any) {
-    const departamentoId = event.target.value;
-    if (departamentoId) {
-      this.selectedDepartamento = departamentoId;
-      this.http.get<any[]>(`http://localhost:3000/departamento-puesto/${departamentoId}/puestos`)
+    const departmentId = event.target.value;
+    if (departmentId) {
+      this.selectedDepartment = departmentId;
+      this.http.get<any[]>(`http://localhost:3000/department-profile/${departmentId}/profile`)
         .subscribe(data => {
-          this.puestos = data;
+          this.profile = data;
         }, error => {
           console.error('Error al obtener los puestos', error);
         });

@@ -40,7 +40,7 @@
 }
 
  /*Boton de Buscar*/
-.buscar{
+.search{
   margin-right: 20px;
   padding: 10px 20px;
   border: none;
@@ -49,7 +49,7 @@
   box-shadow: 0px 0px 5px 0px #333;
 }
 
-.buscar:hover{
+.search:hover{
   background-color: #ccc;
   box-shadow: 0px 0px 10px 0px #555;
 }
@@ -72,18 +72,6 @@
   margin-bottom: 20px;
 }
 
-/* .quick-access a {
-  display: inline-block;
-  margin: 0 10px;
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-}
-
-.quick-access :hover{
-  cursor: pointer;
-} */
-
 /* Botones circulares */
 .circular-buttons {
   display: flex;
@@ -92,7 +80,7 @@
   margin-top: 20px;
 }
 
-.acceso-rapido {
+.quick-access {
   display: flex;
   flex-direction: column; /* Alinea el botón y el texto en columna */
   align-items: center; /* Centra ambos horizontalmente */
