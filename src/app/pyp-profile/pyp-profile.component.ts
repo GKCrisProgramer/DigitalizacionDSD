@@ -32,7 +32,7 @@ export class PypProfileComponent implements OnInit{
     this.idProfile = +this.route.snapshot.paramMap.get('idPuesto')!;
 
     // Llamar al servicio para obtener el documento relacionado con el puesto
-    this.documentProfileService.getDocumentoByPuesto(this.idProfile).subscribe((doc) => {
+    this.documentProfileService.getDocumentByProfile(this.idProfile).subscribe((doc) => {
       this.document = doc;
 
       // Ahora que tenemos el documento, generar la URL segura

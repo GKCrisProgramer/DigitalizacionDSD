@@ -11,7 +11,7 @@ export class DocumentProfileService {
   constructor(private http: HttpClient) {}
 
   // Método para obtener el documento relacionado con un puesto
-  getDocumentoByPuesto(idProfile: number): Observable<any> {
+  getDocumentByProfile(idProfile: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/profile/${idProfile}`);
   }
 }
