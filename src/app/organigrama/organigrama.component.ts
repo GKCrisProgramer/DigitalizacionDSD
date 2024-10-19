@@ -27,6 +27,10 @@ export class OrganigramaComponent implements OnInit {
     this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
   }
 
+  goBack() {
+    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+  }
+
   ngOnInit() {
     // Cargar la lista de departamentos al inicializar el componente
     this.departmentDocumentService.getDepartments().subscribe((deparments) => {

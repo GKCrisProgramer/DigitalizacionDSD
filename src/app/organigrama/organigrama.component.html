@@ -45,6 +45,10 @@
     <div class="pdf-viewer mt-4" *ngIf="documentRoute">
       <iframe [src]="documentRoute" width="80%" height="500px"></iframe>
     </div>
-  </div>          
+  </div>
+  <footer>
+    <!--Boton de volver-->
+    <a (click)="goBack()" class="back-link">← Volver</a>
+  </footer>          
 </body>
 </html>

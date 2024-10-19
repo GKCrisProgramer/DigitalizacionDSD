@@ -21,6 +21,7 @@
     overflow-x: auto; /* Habilitar el scroll horizontal */
     white-space: nowrap; /* Evitar que los botones se vayan a la siguiente línea */
     margin: 5px;
+    margin-top: 25px;
     padding: 10px;
 }
   
@@ -47,3 +48,21 @@
     border: none;
 }
   
+.back{
+    width: 100%;;
+}
+
+/* Enlace "Volver" en la parte inferior izquierda */
+.back-link {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
