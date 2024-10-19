@@ -26,29 +26,29 @@ h2 {
   margin-bottom: 20px;
 }
   
-.indice {
+.index {
   margin-bottom: 40px;
 }
   
-.indice h3 {
+.index h3 {
   font-size: 24px;
 }
   
-.indice ul {
+.index ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-.indice ul:hover{
+.index ul:hover{
   cursor: pointer;
 }
   
-.indice li {
+.index li {
   font-size: 18px;
   margin-bottom: 5px;
 }
 
-.indice li:hover{
+.index li:hover{
   cursor: pointer;
 }
   
