@@ -13,8 +13,8 @@
             <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
             <select (change)="onDepartamentoChange($event)">
                 <option value="" disabled selected>Seleccione un departamento</option>
-                <option *ngFor="let department of department" [value]="department.ID_Department">
-                  {{ department.Department_Name }}
+                <option *ngFor="let department of department" [value]="department.departmentId">
+                  {{ department.departmentName }}
                 </option>
             </select>
         </div>
@@ -24,7 +24,7 @@
             <h3>Puestos relacionados:</h3>
             <ul>
                 <li *ngFor="let profile of profile"  class="Puestos">
-                {{ profile.Profile_Name }}
+                {{ profile.profileName }}
                 </li>
             </ul>
         </div>

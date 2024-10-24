@@ -26,8 +26,8 @@ export class PerfilesComponent implements OnInit{
     
     // Llamada a la API para obtener el documento con ID 2
     this.http.get<any>('http://localhost:3000/document/2').subscribe(document=> {
-      if (document && document.Document_LinkRoute) {
-        const unsafeUrl = `https://drive.google.com/file/d/${document.Document_LinkRoute}/preview`;
+      if (document && document.documentLinkRoute) {
+        const unsafeUrl = `https://drive.google.com/file/d/${document.documentLinkRoute}/preview`;
         this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
       }
     }, error => {
