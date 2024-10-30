@@ -35,8 +35,8 @@ export class ManualPYPComponent implements OnInit {
     }
   }
 
-  getProfiles(idDepartment: number) {
-    this.http.get<any[]>(`http://localhost:3000/department-profile/${idDepartment}/profile`).subscribe(data => {
+  getProfiles(departmentId: number) {
+    this.http.get<any[]>(`http://localhost:3000/department-profile/${departmentId}/profile`).subscribe(data => {
       this.profile = data;
     });
   }

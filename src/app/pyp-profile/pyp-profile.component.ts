@@ -36,7 +36,7 @@ export class PypProfileComponent implements OnInit{
       this.document = doc;
 
       // Ahora que tenemos el documento, generar la URL segura
-      const unsafeUrl = `https://drive.google.com/file/d/${this.document.document.Document_LinkRoute}/preview`;
+      const unsafeUrl = `https://drive.google.com/file/d/${this.document.document.documentLinkRoute}/preview`;
       this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
     });
   }
