@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PypProfileComponent implements OnInit{
   document: any;
-  idProfile!: number;
+  profileId!: number;
   documentRoute!: SafeResourceUrl; // URL segura
   
   // Combinar las inyecciones de dependencias en un solo constructor
@@ -29,16 +29,20 @@ export class PypProfileComponent implements OnInit{
   // Lógica que se ejecuta al inicializar el componente
   ngOnInit() {
     // Obtener el ID del puesto desde la URL
-    this.idProfile = +this.route.snapshot.paramMap.get('idPuesto')!;
+    this.profileId = Number(this.route.snapshot.paramMap.get('profileId')!);
 
     // Llamar al servicio para obtener el documento relacionado con el puesto
-    this.documentProfileService.getDocumentByProfile(this.idProfile).subscribe((doc) => {
-      this.document = doc;
-
-      // Ahora que tenemos el documento, generar la URL segura
-      const unsafeUrl = `https://drive.google.com/file/d/${this.document.document.documentLinkRoute}/preview`;
-      this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
+    this.documentProfileService.getDocumentByProfile(this.profileId).subscribe((doc) => {
+    // Verificar si el documento tiene la estructura esperada
+      if (doc && doc.document && doc.document.documentLinkRoute) {
+        this.document = doc;
+    
+        // Generar la URL segura con la ruta correcta
+        const unsafeUrl = `https://drive.google.com/file/d/${doc.document.documentLinkRoute}/preview`;
+        this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
+      } else {
+        console.error("Documento no encontrado o estructura inesperada:", doc);
+      }
     });
   }
-
 }
