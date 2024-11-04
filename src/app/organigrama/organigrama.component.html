@@ -27,8 +27,8 @@
 
             <!-- Botones de los departamentos -->
             <li class="nav-item" *ngFor="let deparments of deparments">
-              <button class="nav-link-btn-btn-link" (click)="SelectDepartment(deparments.ID_Department)">
-                {{ deparments.Department_Name }}
+              <button class="nav-link-btn-btn-link" (click)="SelectDepartment(deparments.departmentId)">
+                {{ deparments.departmentName }}
               </button>
             </li>
           </ul>

@@ -43,8 +43,8 @@ export class OrganigramaComponent implements OnInit {
     console.log('Departamento seleccionado:', idDepartment);
     this.departmentDocumentService.getDocumentsbyDepartment(idDepartment).subscribe((document) => {
       console.log('Documento recibido:', document); // Esto debería imprimir la respuesta
-      if (document && document[0]?.Document_LinkRoute) { // Aquí se asume que documento es un array
-        const unsafeUrl = `https://drive.google.com/file/d/${document[0].Document_LinkRoute}/preview`;
+      if (document && document[0]?.documentLinkRoute) { // Aquí se asume que documento es un array
+        const unsafeUrl = `https://drive.google.com/file/d/${document[0].documentLinkRoute}/preview`;
         console.log('URL del documento:', unsafeUrl); // Agrega este log
         this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
         this.message = ''; // Limpia el mensaje si hay documento
@@ -59,8 +59,8 @@ export class OrganigramaComponent implements OnInit {
   seeGeneralOrganizationChart() {
     this.http.get<any>('http://localhost:3000/document/3').subscribe(document => {
       console.log('Documento General recibido:', document); // Log para depurar
-      if (document && document.Document_LinkRoute) {
-        const unsafeUrl = `https://drive.google.com/file/d/${document.Document_LinkRoute}/preview`;
+      if (document && document.documentLinkRoute) {
+        const unsafeUrl = `https://drive.google.com/file/d/${document.documentLinkRoute}/preview`;
         this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
         this.message = ''; // Limpia el mensaje si se muestra el documento general
       } else {
