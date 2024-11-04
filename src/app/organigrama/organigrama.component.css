@@ -49,13 +49,13 @@
 }
   
 .back{
-    width: 100%;;
+    width: 100%;
 }
 
 /* Enlace "Volver" en la parte inferior izquierda */
 .back-link {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 20px;
     text-decoration: none;
     color: #007bff;
@@ -65,4 +65,8 @@
 .back-link:hover {
     cursor: pointer;
     text-decoration: underline;
+}
+
+.OrgChart{
+    margin-top: 50px;
 }
