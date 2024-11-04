@@ -10,7 +10,6 @@ import { ManualListComponent } from './manual-list/manual-list.component';
 import { ManualPYPComponent } from './manual-pyp/manual-pyp.component';
 import { PypDepartmentComponent } from './pyp-department/pyp-department.component';
 import { PypProfileComponent } from './pyp-profile/pyp-profile.component';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { OrganigramaComponent } from './organigrama/organigrama.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PerfilesComponent } from './perfiles/perfiles.component';
@@ -32,7 +31,6 @@ import { PerfilesComponent } from './perfiles/perfiles.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    PdfViewerModule,
     HttpClientModule
   ],
   providers: [],
