@@ -271,7 +271,7 @@ export class OrganigramaComponent implements AfterViewInit {
       // blanco
       { key: 2, parent: 1, name: 'Gerente Comercial', category: 'Blanco'},
       { key: 3, parent: 2, name: 'Asistente', category: 'Blanco', isAssistant: true },
-      { key: 4, parent: 2, name: 'Analista de datos', category: 'Blanco' },
+      { key: 4, parent: 2, name: 'Analista de datos', category: 'Blanco', isAssistant: true },
       { key: 5, parent: 2, name: 'Coord. de Venta de Zona 2', category: 'Blanco' },
       { key: 6, parent: 5, name: 'Gerente de CEDIS', category: 'Blanco' },
       { key: 7, parent: 6, name: 'Encargado Administrativo', category: 'Blanco' },
