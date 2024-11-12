@@ -12,21 +12,24 @@
     <div>
       <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
     </div>
+
+
+    <div class="OrgChart" #diagramDiv style="width:95vw; height:80vh;"></div>
       
     <!-- Barra de navegación con los departamentos -->
-    <div class="navbar-container">
+    <!-- <div class="navbar-container">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
             <!-- Botón General -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <button class="nav-link-btn-btn-link" (click)="seeGeneralOrganizationChart()">
                   General
               </button>
-            </li>
+            </li> -->
 
             <!-- Botones de los departamentos -->
-            <li class="nav-item" *ngFor="let deparments of deparments">
+            <!-- <li class="nav-item" *ngFor="let deparments of deparments">
               <button class="nav-link-btn-btn-link" (click)="SelectDepartment(deparments.departmentId)">
                 {{ deparments.departmentName }}
               </button>
@@ -34,17 +37,17 @@
           </ul>
         </div>
       </nav>
-    </div>
+    </div> -->
     
     <!-- Mensaje si no hay documento -->
-    <div *ngIf="message" class="alert alert-warning mt-3">
+    <!-- <div *ngIf="message" class="alert alert-warning mt-3">
       {{ message }}
-    </div>
+    </div> -->
 
     <!-- Visor de PDF -->
-    <div class="pdf-viewer mt-4" *ngIf="documentRoute">
+    <!-- <div class="pdf-viewer mt-4" *ngIf="documentRoute">
       <iframe [src]="documentRoute" width="80%" height="500px"></iframe>
-    </div>
+    </div> -->
   </div>
   <footer>
     <!--Boton de volver-->
