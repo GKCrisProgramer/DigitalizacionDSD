@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +19,8 @@ export class LoginComponent {
       username: this.username,
       password: this.password
     };
-  
-    this.http.post<any>('http://localhost:3000/user/login', loginData).subscribe(
+
+    this.http.post<any>(`${environment.apiUrl}/user/login`, loginData).subscribe(
       response => {
         if (response.success) {
           this.router.navigate(['/home']);

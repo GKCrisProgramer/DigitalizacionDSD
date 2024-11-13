@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-perfiles',
@@ -14,18 +15,18 @@ export class PerfilesComponent implements OnInit{
   department: any[] = [];        // Lista de departamentos
   profile: any[] = [];              // Lista de puestos para el departamento seleccionado
   selectedDepartment: number | null = null; // ID del departamento seleccionado
-  
+
   constructor(
     private sanitizer: DomSanitizer,
-    private http: HttpClient, 
+    private http: HttpClient,
     private router: Router,
   ) {}
 
   ngOnInit(): void {
     this.getDepartamentos(); // Cargar los departamentos al inicializar
-    
+
     // Llamada a la API para obtener el documento con ID 2
-    this.http.get<any>('http://localhost:3000/document/2').subscribe(document=> {
+    this.http.get<any>(`${environment.apiUrl}/document/2`).subscribe(document=> {
       if (document && document.documentLinkRoute) {
         const unsafeUrl = `https://drive.google.com/file/d/${document.documentLinkRoute}/preview`;
         this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
@@ -37,7 +38,7 @@ export class PerfilesComponent implements OnInit{
 
   // Obtener todos los departamentos desde el backend
   getDepartamentos() {
-    this.http.get<any[]>('http://localhost:3000/department')
+    this.http.get<any[]>(`${environment.apiUrl}/department`)
       .subscribe(data => {
         this.department = data;
       }, error => {
@@ -50,7 +51,7 @@ export class PerfilesComponent implements OnInit{
     const departmentId = event.target.value;
     if (departmentId) {
       this.selectedDepartment = departmentId;
-      this.http.get<any[]>(`http://localhost:3000/department-profile/${departmentId}/profile`)
+      this.http.get<any[]>(`${environment.apiUrl}/department-profile/${departmentId}/profile`)
         .subscribe(data => {
           this.profile = data;
         }, error => {
@@ -61,10 +62,10 @@ export class PerfilesComponent implements OnInit{
 
   // Navegar de regreso a 'home'
   goBack() {
-    this.router.navigate(['/home']);  
+    this.router.navigate(['/home']);
   }
-  
+
   goHome() {
-    this.router.navigate(['/home']);  
+    this.router.navigate(['/home']);
   }
 }
