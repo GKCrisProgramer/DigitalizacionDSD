@@ -2,10 +2,10 @@ import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
-import { DepartmentDocumentService } from './Service/departamento-documentos.service';
+import { DepartmentDocumentService } from '../../services/departamento-documentos.service';
 import * as go from 'gojs';
-import { SideTreeLayout, isAssistant } from './Functions/Assistance-SideThree.functions';
-import { categoryColors } from './Functions/category-colors';
+import { SideTreeLayout, isAssistant } from './functions/Assistance-SideThree.functions';
+import { categoryColors } from './functions/category-colors';
 
 @Component({
   selector: 'app-organigrama',
@@ -127,7 +127,7 @@ export class OrganigramaComponent implements AfterViewInit {
       { key: 18, parent: 3, name: 'Gerente Comercial, Distribución y Logística', category: 'CIOC'},
       { key: 19, parent: 18, name: 'Asistente', category: 'CIO', isAssistant: true},
       { key: 20, parent: 18, name: 'Analista de Datos', category: 'CIO', isAssistant: true},
-  
+
       { key: 21, parent: 18, name: 'Coord. de Venta de Zona 1', category: 'CIO' },
       { key: 22, parent: 21, name: 'Gerentes de CEDIS (1)', category: 'CIO' },
       { key: 23, parent: 22, name: 'Supervisores de Ventas', category: 'CIO' },

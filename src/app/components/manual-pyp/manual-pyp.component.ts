@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-manual-pyp',
@@ -36,7 +37,7 @@ export class ManualPYPComponent implements OnInit {
   }
 
   getProfiles(departmentId: number) {
-    this.http.get<any[]>(`http://localhost:3000/department-profile/${departmentId}/profile`).subscribe(data => {
+    this.http.get<any[]>(`${environment.apiUrl}/department-profile/${departmentId}/profile`).subscribe(data => {
       this.profile = data;
     });
   }
@@ -54,5 +55,5 @@ export class ManualPYPComponent implements OnInit {
   goHome() {
     this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
   }
-  
+
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { DocumentProfileService } from './Service/pyp-profile.service';
+import { DocumentProfileService } from '../../services/pyp-profile.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,10 +13,10 @@ export class PypProfileComponent implements OnInit{
   document: any;
   profileId!: number;
   documentRoute!: SafeResourceUrl; // URL segura
-  
+
   // Combinar las inyecciones de dependencias en un solo constructor
   constructor(
-    private router: Router, 
+    private router: Router,
     private route: ActivatedRoute,
     private documentProfileService: DocumentProfileService,
     private sanitizer: DomSanitizer) { }
@@ -36,7 +36,7 @@ export class PypProfileComponent implements OnInit{
     // Verificar si el documento tiene la estructura esperada
       if (doc && doc.document && doc.document.documentLinkRoute) {
         this.document = doc;
-    
+
         // Generar la URL segura con la ruta correcta
         const unsafeUrl = `https://drive.google.com/file/d/${doc.document.documentLinkRoute}/preview`;
         this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);

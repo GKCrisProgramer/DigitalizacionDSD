@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { IntroComponent } from './intro/intro.component';
-import { ManualListComponent } from './manual-list/manual-list.component';
-import { ManualPYPComponent } from './manual-pyp/manual-pyp.component';
-import { PypDepartmentComponent } from './pyp-department/pyp-department.component';
-import { PypProfileComponent } from './pyp-profile/pyp-profile.component';
-import { OrganigramaComponent } from './organigrama/organigrama.component';
-import { PerfilesComponent } from './perfiles/perfiles.component';
+import {LoginComponent} from './components/login/login.component';
+import {IntroComponent} from './components/intro/intro.component';
+import {HomeComponent} from './components/home/home.component';
+import {ManualListComponent} from './components/manual-list/manual-list.component';
+import {ManualPYPComponent} from './components/manual-pyp/manual-pyp.component';
+import {PerfilesComponent} from './components/perfiles/perfiles.component';
+import {PypDepartmentComponent} from './components/pyp-department/pyp-department.component';
+import {PypProfileComponent} from './components/pyp-profile/pyp-profile.component';
+import {OrganigramaComponent} from './components/organigrama/organigrama.component';
 
 const routes: Routes = [
   //agregar esta ruta
