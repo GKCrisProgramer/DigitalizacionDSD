@@ -21,7 +21,7 @@ export class ManualPYPComponent implements OnInit {
   }
 
   getDepartments() {
-    this.http.get<any[]>('http://localhost:3000/department').subscribe(data => {
+    this.http.get<any[]>(`${environment.apiUrl}/department`).subscribe(data => {
       this.department = data;
     });
   }
