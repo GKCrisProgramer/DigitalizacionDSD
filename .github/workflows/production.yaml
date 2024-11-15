@@ -25,9 +25,7 @@ jobs:
       - name: Push Docker image
         run: |
           docker push josejaguirre/manual-app:latest
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Update image on remote server
         env:
           HOST: ${{ vars.MANUAL_HOST }}
