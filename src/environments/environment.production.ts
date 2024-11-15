@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'http://manual-service:3000',
+  apiUrl: 'http://50.21.176.71:3000',
 };
