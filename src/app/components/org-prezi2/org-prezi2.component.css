@@ -1,0 +1,34 @@
+.logo {
+    width: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.logo:hover{
+    cursor: pointer;
+}
+
+.back{
+    width: 100%;
+}
+
+/* Enlace "Volver" en la parte inferior izquierda */
+.back-link {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.center{
+    padding-top: 30px;
+    margin-top: 30px;
+    text-align: center;
+}

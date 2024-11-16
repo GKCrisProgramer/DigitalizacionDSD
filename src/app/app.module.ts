@@ -13,6 +13,10 @@ import {PypDepartmentComponent} from './components/pyp-department/pyp-department
 import {PypProfileComponent} from './components/pyp-profile/pyp-profile.component';
 import {OrganigramaComponent} from './components/organigrama/organigrama.component';
 import {PerfilesComponent} from './components/perfiles/perfiles.component';
+import { OrgListComponent } from './components/org-list/org-list.component';
+import { OrgPPTXComponent } from './components/org-pptx/org-pptx.component';
+import { OrgPrezi2Component } from './components/org-prezi2/org-prezi2.component';
+import { OrgPrezi3Component } from './components/org-prezi3/org-prezi3.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import {PerfilesComponent} from './components/perfiles/perfiles.component';
     PypDepartmentComponent,
     PypProfileComponent,
     OrganigramaComponent,
-    PerfilesComponent
+    PerfilesComponent,
+    OrgListComponent,
+    OrgPPTXComponent,
+    OrgPrezi2Component,
+    OrgPrezi3Component
   ],
   imports: [
     BrowserModule,

@@ -30,7 +30,7 @@ export class OrganigramaComponent implements AfterViewInit {
   }
 
   goBack() {
-    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+    this.router.navigate(['/org-list']);  // Cambia '/home' según la ruta deseada
   }
 
   @ViewChild('diagramDiv', { static: true }) diagramDiv!: ElementRef;
