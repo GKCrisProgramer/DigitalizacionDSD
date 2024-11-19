@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 export class OrgListComponent {
   constructor(private router: Router) {}
 
-  goToOrganigrama(){
+  goToOrganizationChart(){
     this.router.navigate(['/organization-chart'])
   }
-  goToOrganigramaAuto(){
+  goToAuthorizedOrganizationChart(){
     this.router.navigate(['/org-PPTX'])
   }
   goToPrezi1(){
@@ -22,7 +22,7 @@ export class OrgListComponent {
   goToPrezi2(){
     this.router.navigate(['/org-Prezi3'])
   }
-  goToStar(){
+  goToStart(){
     this.router.navigate(['/home']) // Navega a la pantalla de inicio
   }
   goHome() {

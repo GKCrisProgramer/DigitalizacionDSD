@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // Necesario para ngModel
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms'; // Necesario para ngModel
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './components/login/login.component';
 import {HomeComponent} from './components/home/home.component';
 import {IntroComponent} from './components/intro/intro.component';
@@ -13,10 +13,10 @@ import {PypDepartmentComponent} from './components/pyp-department/pyp-department
 import {PypProfileComponent} from './components/pyp-profile/pyp-profile.component';
 import {OrganigramaComponent} from './components/organigrama/organigrama.component';
 import {PerfilesComponent} from './components/perfiles/perfiles.component';
-import { OrgListComponent } from './components/org-list/org-list.component';
-import { OrgPPTXComponent } from './components/org-pptx/org-pptx.component';
-import { OrgPrezi2Component } from './components/org-prezi2/org-prezi2.component';
-import { OrgPrezi3Component } from './components/org-prezi3/org-prezi3.component';
+import {OrgListComponent} from './components/org-list/org-list.component';
+import {OrgPPTXComponent} from './components/org-pptx/org-pptx.component';
+import {OrganigramaPrezi2Component} from './components/org-prezi2/org-prezi2.component';
+import {OrganigramaPrezi3Component} from './components/org-prezi3/org-prezi3.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +32,8 @@ import { OrgPrezi3Component } from './components/org-prezi3/org-prezi3.component
     PerfilesComponent,
     OrgListComponent,
     OrgPPTXComponent,
-    OrgPrezi2Component,
-    OrgPrezi3Component
+    OrganigramaPrezi2Component,
+    OrganigramaPrezi3Component
   ],
   imports: [
     BrowserModule,
