@@ -11,8 +11,8 @@ import {PypProfileComponent} from './components/pyp-profile/pyp-profile.componen
 import {OrganigramaComponent} from './components/organigrama/organigrama.component';
 import {OrgListComponent} from './components/org-list/org-list.component';
 import {OrgPPTXComponent} from './components/org-pptx/org-pptx.component';
-import {OrgPrezi2Component} from './components/org-prezi2/org-prezi2.component';
-import {OrgPrezi3Component} from './components/org-prezi3/org-prezi3.component';
+import {OrganigramaPrezi2Component} from './components/org-prezi2/org-prezi2.component';
+import {OrganigramaPrezi3Component} from './components/org-prezi3/org-prezi3.component';
 
 const routes: Routes = [
   //agregar esta ruta
@@ -32,8 +32,8 @@ const routes: Routes = [
   { path: 'org-list', component: OrgListComponent },
   { path: 'organization-chart', component: OrganigramaComponent },
   { path: 'org-PPTX', component: OrgPPTXComponent },
-  { path: 'org-Prezi2', component: OrgPrezi2Component },
-  { path: 'org-Prezi3', component: OrgPrezi3Component },
+  { path: 'org-Prezi2', component: OrganigramaPrezi2Component },
+  { path: 'org-Prezi3', component: OrganigramaPrezi3Component },
 
   //ruta principal
   //{ path: '', redirectTo: '/home', pathMatch: 'full' },
