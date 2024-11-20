@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './org-prezi3.component.html',
   styleUrl: './org-prezi3.component.css'
 })
-export class OrganigramaPrezi3Component {
+export class OrganizationChartPrezi3Component {
   constructor(private router: Router) {}
 
   goBack(){
