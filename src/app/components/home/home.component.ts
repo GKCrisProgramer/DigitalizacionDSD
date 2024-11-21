@@ -29,4 +29,9 @@ export class HomeComponent {
   goToPerfiles(){
     this.router.navigate(['/ProfileList'])
   }
+
+  logout() {
+    localStorage.removeItem('authToken'); // Elimina el token
+    this.router.navigate(['/login']); // Redirige al login
+  }
 }
