@@ -51,7 +51,14 @@ h2 {
 .index li:hover{
   cursor: pointer;
 }
-  
+
+.selected-department {
+  color: white;
+  background-color: blue;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 .select {
   padding: 5px 40px;
 }

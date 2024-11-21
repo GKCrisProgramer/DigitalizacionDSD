@@ -19,7 +19,9 @@
     <div class="index">
       <ul>
         <li *ngFor="let department of department">
-          <div (click)="toggleProfile(department.departmentId)">
+          <div 
+            (click)="toggleProfile(department.departmentId)"
+            [ngClass]="{'selected-department': departmentSelected === department.departmentId}">
             {{ department.departmentName }}
           </div>
     
