@@ -52,6 +52,10 @@ h2 {
   cursor: pointer;
 }
   
+.select {
+  padding: 5px 40px;
+}
+
 .select:hover{
   color:blue;
 }
