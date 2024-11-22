@@ -28,4 +28,7 @@ export class OrgListComponent {
   goHome() {
     this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
   }
+  goToProfiles(){
+    this.router.navigate(['/ProfileList'])
+  }
 }
