@@ -51,8 +51,38 @@ h2 {
 .index li:hover{
   cursor: pointer;
 }
-  
-.select:hover{
+
+.index_area {
+  padding: 5px 40px;
+}
+
+.index_area:hover{
+  color:blue;
+  cursor: pointer;
+}
+
+.index_area_level1 {
+  padding: 5px 60px;
+}
+
+.index_area_level1:hover{
+  color:blue;
+}
+
+.index_area_level1N{
+  padding: 5px 60px;
+  font-weight: bold;
+}
+
+.index_area_level1N:hover{
+  color:blue;
+}
+
+.index_area_level2 {
+  padding: 5px 80px;
+}
+
+.index_area_level2:hover{
   color:blue;
 }
 

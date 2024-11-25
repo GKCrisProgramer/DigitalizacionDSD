@@ -25,4 +25,9 @@ export class HomeComponent {
   goToOrganigrama(){
     this.router.navigate(['/org-list'])
   }
+
+  logout() {
+    localStorage.removeItem('authToken'); // Elimina el token
+    this.router.navigate(['/login']); // Redirige al login
+  }
 }

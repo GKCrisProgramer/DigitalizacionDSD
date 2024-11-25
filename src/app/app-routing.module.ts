@@ -13,12 +13,13 @@ import {OrgListComponent} from './components/org-list/org-list.component';
 import {OrgPPTXComponent} from './components/org-pptx/org-pptx.component';
 import {OrganizationChartPrezi2Component} from './components/org-prezi2/org-prezi2.component';
 import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prezi3.component';
+import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
   //agregar esta ruta
   { path: 'login', component: LoginComponent },
   { path: 'intro', component: IntroComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'manual-list', component: ManualListComponent },
   { path: 'manual-detail', component: ManualPYPComponent },
   { path: 'ProfileList', component: PerfilesComponent },
@@ -38,7 +39,9 @@ const routes: Routes = [
   //ruta principal
   //{ path: '', redirectTo: '/home', pathMatch: 'full' },
   // cambiar a esta ruta cuando este lista
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+
+  { path: '**', redirectTo: 'login' }, // Redirige al login por defecto
 
 ];
 
