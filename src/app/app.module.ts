@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // Necesario para ngModel
@@ -14,6 +15,10 @@ import {PypDepartmentComponent} from './components/pyp-department/pyp-department
 import {PypProfileComponent} from './components/pyp-profile/pyp-profile.component';
 import {OrganigramaComponent} from './components/organigrama/organigrama.component';
 import {PerfilesComponent} from './components/perfiles/perfiles.component';
+import {OrgListComponent} from './components/org-list/org-list.component';
+import {OrgPPTXComponent} from './components/org-pptx/org-pptx.component';
+import {OrganizationChartPrezi2Component} from './components/org-prezi2/org-prezi2.component';
+import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prezi3.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,11 @@ import {PerfilesComponent} from './components/perfiles/perfiles.component';
     PypDepartmentComponent,
     PypProfileComponent,
     OrganigramaComponent,
-    PerfilesComponent
+    PerfilesComponent,
+    OrgListComponent,
+    OrgPPTXComponent,
+    OrganizationChartPrezi2Component,
+    OrganizationChartPrezi3Component,
   ],
   imports: [
     BrowserModule,

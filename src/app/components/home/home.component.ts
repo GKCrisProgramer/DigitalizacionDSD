@@ -23,11 +23,7 @@ export class HomeComponent {
   }
 
   goToOrganigrama(){
-    this.router.navigate(['/organization-chart'])
-  }
-
-  goToPerfiles(){
-    this.router.navigate(['/ProfileList'])
+    this.router.navigate(['/org-list'])
   }
 
   logout() {

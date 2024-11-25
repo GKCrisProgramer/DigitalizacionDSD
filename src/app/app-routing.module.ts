@@ -9,6 +9,10 @@ import {PerfilesComponent} from './components/perfiles/perfiles.component';
 import {PypDepartmentComponent} from './components/pyp-department/pyp-department.component';
 import {PypProfileComponent} from './components/pyp-profile/pyp-profile.component';
 import {OrganigramaComponent} from './components/organigrama/organigrama.component';
+import {OrgListComponent} from './components/org-list/org-list.component';
+import {OrgPPTXComponent} from './components/org-pptx/org-pptx.component';
+import {OrganizationChartPrezi2Component} from './components/org-prezi2/org-prezi2.component';
+import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prezi3.component';
 import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
@@ -26,7 +30,11 @@ const routes: Routes = [
   //{ path: 'desplegable-manual/:idPuesto', component: PypProfileComponent },
 
   //ruta de organigram
+  { path: 'org-list', component: OrgListComponent },
   { path: 'organization-chart', component: OrganigramaComponent },
+  { path: 'org-PPTX', component: OrgPPTXComponent },
+  { path: 'org-Prezi2', component: OrganizationChartPrezi2Component },
+  { path: 'org-Prezi3', component: OrganizationChartPrezi3Component },
 
   //ruta principal
   //{ path: '', redirectTo: '/home', pathMatch: 'full' },

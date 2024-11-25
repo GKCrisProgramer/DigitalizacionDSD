@@ -62,7 +62,7 @@ export class PerfilesComponent implements OnInit{
 
   // Navegar de regreso a 'home'
   goBack() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/org-list']);
   }
 
   goHome() {
