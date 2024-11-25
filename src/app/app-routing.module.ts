@@ -9,12 +9,13 @@ import {PerfilesComponent} from './components/perfiles/perfiles.component';
 import {PypDepartmentComponent} from './components/pyp-department/pyp-department.component';
 import {PypProfileComponent} from './components/pyp-profile/pyp-profile.component';
 import {OrganigramaComponent} from './components/organigrama/organigrama.component';
+import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
   //agregar esta ruta
   { path: 'login', component: LoginComponent },
   { path: 'intro', component: IntroComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'manual-list', component: ManualListComponent },
   { path: 'manual-detail', component: ManualPYPComponent },
   { path: 'ProfileList', component: PerfilesComponent },
@@ -30,7 +31,9 @@ const routes: Routes = [
   //ruta principal
   //{ path: '', redirectTo: '/home', pathMatch: 'full' },
   // cambiar a esta ruta cuando este lista
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+
+  { path: '**', redirectTo: 'login' }, // Redirige al login por defecto
 
 ];
 

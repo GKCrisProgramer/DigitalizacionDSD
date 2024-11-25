@@ -17,21 +17,23 @@ export class LoginComponent {
   onSubmit() {
     const loginData = {
       username: this.username,
-      password: this.password
+      password: this.password,
     };
-
+  
     this.http.post<any>(`${environment.apiUrl}/user/login`, loginData).subscribe(
-      response => {
+      (response) => {
         if (response.success) {
-          this.router.navigate(['/home']);
+          // Almacena el token en el localStorage
+          localStorage.setItem('authToken', response.token);
+          this.router.navigate(['/home']); // Redirige al home
         } else {
           alert(response.message);
         }
       },
-      error => {
+      (error) => {
         console.error('Error al intentar iniciar sesión', error);
       }
     );
-  }
+  }  
 }
 

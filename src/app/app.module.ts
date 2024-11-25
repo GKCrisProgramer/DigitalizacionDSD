@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'; // Necesario para ngModel
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './auth.guard';
 import {LoginComponent} from './components/login/login.component';
 import {HomeComponent} from './components/home/home.component';
 import {IntroComponent} from './components/intro/intro.component';

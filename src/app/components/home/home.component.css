@@ -11,6 +11,32 @@
   padding: 0px 150px;
 }
 
+/* Contenedor del botón de logout */
+.home-logout {
+  position: absolute;
+  top: 20px; /* Distancia desde la parte superior */
+  right: 20px; /* Distancia desde la derecha */
+}
+
+/* Botón de logout */
+.logout-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: white;
+  background-color: #333; /* Color de fondo */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de clic */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Animación */
+}
+
+/* Efecto hover para el botón */
+.logout-button:hover {
+  background-color: #555; /* Color de fondo al pasar el mouse */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Aumenta la sombra */
+}
+
 /* Mensaje de bienvenida */
 .welcome-message {
   text-align: center;
@@ -99,7 +125,6 @@
   margin-bottom: 10px; /* Espacio entre el botón y el texto */
   box-shadow: 0px 0px 10px #333;
 }
-
 
 .circular-button:hover {
   background-color: #cccc;
