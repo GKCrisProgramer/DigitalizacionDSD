@@ -30,4 +30,12 @@ export class HomeComponent {
     localStorage.removeItem('authToken'); // Elimina el token
     this.router.navigate(['/login']); // Redirige al login
   }
+
+  goToProcedures(){
+    this.router.navigate(['/Procedimientos'])
+  }
+
+  goToInductionCourses(){
+    this.router.navigate(['/Cursos-Induccion'])
+  }
 }

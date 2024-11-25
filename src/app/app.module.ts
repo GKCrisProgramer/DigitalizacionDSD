@@ -19,6 +19,8 @@ import {OrgListComponent} from './components/org-list/org-list.component';
 import {OrgPPTXComponent} from './components/org-pptx/org-pptx.component';
 import {OrganizationChartPrezi2Component} from './components/org-prezi2/org-prezi2.component';
 import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prezi3.component';
+import {MProcProfileComponent} from './components/mproc-profile/mproc-profile.component';
+import {InductionCoursesComponent} from './components/induction-courses/induction-courses.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prez
     OrgPPTXComponent,
     OrganizationChartPrezi2Component,
     OrganizationChartPrezi3Component,
+    MProcProfileComponent,
+    InductionCoursesComponent,
   ],
   imports: [
     BrowserModule,
