@@ -22,10 +22,6 @@ export class HomeComponent {
     this.router.navigate(['/manual-detail'])
   }
 
-  goToPerfiles() {
-    this.router.navigate(['/']);
-  }
-
   goToOrganigrama(){
     this.router.navigate(['/org-list'])
   }
