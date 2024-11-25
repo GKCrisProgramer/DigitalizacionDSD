@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle</title>
+    <link rel="stylesheet" href="induction-courses.component.css">
+</head>
+<body>
+  
+    <div class="container">
+        <!-- Mostrar el PDF embebido -->
+        <div class="pdf-viewer" *ngIf="documentRoute">
+            <p class="center">
+                <iframe [src]="documentRoute" width="80%" height="525px"></iframe>
+            </p>
+        </div>
+    
+          
+        <div class="action-buttons">
+          <button class="btn">Descargar</button>
+          <button class="btn" (click)="goBack()">Volver</button>
+        </div>
+    </div>
+      
+</body>
+</html>

@@ -31,12 +31,39 @@
     border: none;
     background-color: #e0e0e0;
     font-size: 14px;
-    text-align: center;
+    text-align: start;
     width: 100%;
     box-shadow: 0px 0px 5px 0px #333;
 }
   
 .org-button:hover{
+    cursor: pointer;
+    background-color: #aaa;
+    box-shadow: 0px 0px 10px 0px #333;
+}
+
+.button-return {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+.back{
+  width: 100%;
+}
+
+/* Enlace "Volver" en la parte inferior izquierda */
+.back-link {
+  padding: 15px;
+  border: none;
+  background-color: #e0e0e0;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0px 0px 5px 0px #333;
+}
+
+.back-link:hover {
     cursor: pointer;
     background-color: #aaa;
     box-shadow: 0px 0px 10px 0px #333;
