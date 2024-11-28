@@ -37,6 +37,9 @@
             
             <!-- Mostrar perfiles relacionados con el departamento -->
             <ul *ngIf="profilesByDepartment[department.departmentId]">
+              <li (click)="onDepartmentSelected(department.departmentId)" class="index_area_level2">
+                {{ department.departmentName }} 
+              </li>
               <li *ngFor="let profile of profilesByDepartment[department.departmentId]" 
                 (click)="onProfileSelected(profile.profileId)" class="index_area_level2">
                   {{ profile.profileName }}

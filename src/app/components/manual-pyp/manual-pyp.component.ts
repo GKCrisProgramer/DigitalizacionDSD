@@ -76,6 +76,10 @@ export class ManualPYPComponent implements OnInit {
     this.router.navigate(['/profile/', profileId]);
   }
 
+  onDepartmentSelected(departmentId: number) {
+    this.router.navigate(['/department/', departmentId]);
+  }
+
   goBack() {
     this.router.navigate(['/manual-list']);
   }
