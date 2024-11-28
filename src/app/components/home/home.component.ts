@@ -32,7 +32,7 @@ export class HomeComponent {
   }
 
   goToProcedures(){
-    this.router.navigate(['/Procedimientos'])
+    this.router.navigate(['/ProcedimientosList'])
   }
 
   goToInductionCourses(){

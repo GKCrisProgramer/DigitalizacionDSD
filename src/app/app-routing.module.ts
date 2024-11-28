@@ -15,6 +15,7 @@ import {OrganizationChartPrezi2Component} from './components/org-prezi2/org-prez
 import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prezi3.component';
 import {MProcProfileComponent} from './components/mproc-profile/mproc-profile.component';
 import {InductionCoursesComponent} from './components/induction-courses/induction-courses.component';
+import {MprocListComponent} from './components/mproc-list/mproc-list.component';
 import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'department/:id', component:PypDepartmentComponent },
   { path: 'profile/:profileId', component: PypProfileComponent },
   //{ path: 'desplegable-manual/:idPuesto', component: PypProfileComponent },
-  { path: 'Procedimientos', component: MProcProfileComponent },
+  { path: 'ProcedimientosList', component: MprocListComponent},
+  { path: 'Procedimientos/:departmentId', component: MProcProfileComponent },
   { path: 'Cursos-Induccion', component: InductionCoursesComponent },
 
   //ruta de organigram

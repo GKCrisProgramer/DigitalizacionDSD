@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mproc-list.component.css">
+</head>
+<body>
+  <div class="manual-detail-container">
+    <!-- Logo en la parte superior izquierda -->
+    <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
+    
+    <!-- Título del manual -->
+    <h1 class="center">Manual de Procedimientos</h1>
+    <h2>Índice</h2>
+    <!-- Índice del manual -->
+    <div class="index">
+      <div *ngFor="let departments of departments">
+        <h3 (click)="toggleArea(departments.departmentsId)" class="index_area">
+          {{ departments.departmentsName }}
+        </h3>
+            
+        <!-- Mostrar perfiles relacionados con el departamento -->
+        <ul *ngIf="profilesByDepartment[departments.departmentId]">
+          <li *ngFor="let profile of profilesByDepartment[departments.departmentId]" 
+            (click)="onProfileSelected(profile.profileId)" class="index_area_level1">
+              {{ profile.profileName }}
+          </li>
+        </ul>
+      </div>
+    </div> 
+  </div>
+</body>
+</html>
