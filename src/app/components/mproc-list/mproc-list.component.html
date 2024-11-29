@@ -17,15 +17,17 @@
     <!-- Índice del manual -->
     <div class="index">
       <div *ngFor="let departments of departments">
-        <h3 (click)="toggleArea(departments.departmentsId)" class="index_area">
-          {{ departments.departmentsName }}
+        <h3 (click)="toggleDepartment(departments.departmentId)" class="index_area">
+          {{ departments.departmentName }}
         </h3>
             
-        <!-- Mostrar perfiles relacionados con el departamento -->
-        <ul *ngIf="profilesByDepartment[departments.departmentId]">
-          <li *ngFor="let profile of profilesByDepartment[departments.departmentId]" 
-            (click)="onProfileSelected(profile.profileId)" class="index_area_level1">
-              {{ profile.profileName }}
+        <!-- Mostrar perfiles del departamento directamente -->
+        <ul *ngIf="expandedDepartment === departments.departmentId && profilesByDepartment[departments.departmentId]?.length">
+          <li (click)="onDepartmentSelected(departments.departmentId)" class="index_area_level1N">
+            {{ departments.departmentName}}
+          </li>
+          <li *ngFor="let profile of profilesByDepartment[departments.departmentId]" (click)="onProfileSelected(profile.profileId)" class="index_area_level1">
+            {{ profile.profileName }}
           </li>
         </ul>
       </div>

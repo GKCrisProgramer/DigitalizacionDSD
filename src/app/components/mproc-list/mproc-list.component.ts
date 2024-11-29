@@ -25,7 +25,7 @@ export class MprocListComponent implements OnInit{
     });
   }
 
-  toggleArea(departmentId: number) {
+  toggleDepartment(departmentId: number) {
     if (this.expandedDepartment === departmentId) {
       this.expandedDepartment = null;
     } else {
@@ -43,11 +43,11 @@ export class MprocListComponent implements OnInit{
   }
 
   onProfileSelected(profileId: number){
-    return this.router.navigate(['/profile/', profileId])
+    this.router.navigate(['/ProcedimientosProfile/', profileId]);
   }
 
   onDepartmentSelected(departmentId: number) {
-    this.router.navigate(['/procedimientos/', departmentId]);
+    this.router.navigate(['/ProcedimientosDepartment/', departmentId]);
   }
 
   goBack() {

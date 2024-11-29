@@ -22,6 +22,7 @@ import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prez
 import {MProcProfileComponent} from './components/mproc-profile/mproc-profile.component';
 import {InductionCoursesComponent} from './components/induction-courses/induction-courses.component';
 import { MprocListComponent } from './components/mproc-list/mproc-list.component';
+import { MprocDeparmentComponent } from './components/mproc-deparment/mproc-deparment.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MprocListComponent } from './components/mproc-list/mproc-list.component
     MProcProfileComponent,
     InductionCoursesComponent,
     MprocListComponent,
+    MprocDeparmentComponent,
   ],
   imports: [
     BrowserModule,
