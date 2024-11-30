@@ -23,6 +23,7 @@ import {MProcProfileComponent} from './components/mproc-profile/mproc-profile.co
 import {InductionCoursesComponent} from './components/induction-courses/induction-courses.component';
 import { MprocListComponent } from './components/mproc-list/mproc-list.component';
 import { MprocDeparmentComponent } from './components/mproc-deparment/mproc-deparment.component';
+import { InductionListComponent } from './components/induction-list/induction-list.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { MprocDeparmentComponent } from './components/mproc-deparment/mproc-depa
     InductionCoursesComponent,
     MprocListComponent,
     MprocDeparmentComponent,
+    InductionListComponent,
   ],
   imports: [
     BrowserModule,

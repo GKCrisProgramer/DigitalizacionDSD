@@ -36,6 +36,6 @@ export class HomeComponent {
   }
 
   goToInductionCourses(){
-    this.router.navigate(['/Cursos-Induccion'])
+    this.router.navigate(['/Cursos-lista'])
   }
 }

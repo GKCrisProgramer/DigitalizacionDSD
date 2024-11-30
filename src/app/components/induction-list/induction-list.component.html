@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="induction-list.component.css">
+</head>
+<body>
+    <div class="manual-detail-container">
+        <!-- Logo en la parte superior izquierda -->
+        <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
+    
+        <!-- Título del manual -->
+        <h1 class="center">Manual de Procedimientos</h1>
+        <h2>Índice</h2>
+        <!-- Índice del manual -->
+        <div class="index">
+            <div *ngFor="let course of course">
+                <h3 (click)="toggleCourse(course.courseId)" class="index_area">
+                    {{ course.courseName }}
+                </h3>
+
+                <!-- Mostrar perfiles del departamento directamente -->
+                <ul *ngIf="expandedCourse === course.courseId && documentsByCourse[course.courseId]?.length">
+                    <li *ngFor="let document of documentsByCourse[course.courseId]" (click)="onDocumentSelected(document.documentId)" class="index_area_level1">
+                        {{ document.documentName }}
+                    </li>
+                </ul>
+            </div>
+        </div> 
+    </div>
+</body>
+</html>
