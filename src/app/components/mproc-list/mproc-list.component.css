@@ -1,7 +1,7 @@
 .manual-detail-container {
-    padding: 20px;
-    text-align: left;
-    position: relative;
+  padding: 20px;
+  text-align: left;
+  position: relative;
 }
   
 .logo {
@@ -83,6 +83,15 @@ h2 {
 }
 
 .index_area_level2:hover{
+  color:blue;
+}
+
+.index_area_level2N {
+  padding: 5px 80px;
+  font-weight: bold;
+}
+
+.index_area_level2N:hover{
   color:blue;
 }
 

@@ -16,18 +16,35 @@
     <h2>Índice</h2>
     <!-- Índice del manual -->
     <div class="index">
-      <div *ngFor="let departments of departments">
-        <h3 (click)="toggleDepartment(departments.departmentId)" class="index_area">
-          {{ departments.departmentName }}
+      <div *ngFor="let area of areas">
+        <h3 (click)="toggleArea(area.areaId)" class="index_area">
+          {{ area.areaName }}
         </h3>
-            
-        <!-- Mostrar perfiles del departamento directamente -->
-        <ul *ngIf="expandedDepartment === departments.departmentId && profilesByDepartment[departments.departmentId]?.length">
-          <li (click)="onDepartmentSelected(departments.departmentId)" class="index_area_level1N">
-            {{ departments.departmentName}}
-          </li>
-          <li *ngFor="let profile of profilesByDepartment[departments.departmentId]" (click)="onProfileSelected(profile.profileId)" class="index_area_level1">
+      
+        <!-- Mostrar perfiles del área directamente -->
+        <ul *ngIf="expandedArea === area.areaId && profilesByArea[area.areaId]?.length">
+          <li *ngFor="let profile of profilesByArea[area.areaId]" (click)="onProfileSelected(profile.profileId)" class="index_area_level1">
             {{ profile.profileName }}
+          </li>
+        </ul>
+    
+        <!-- Mostrar departamentos relacionados con el área -->
+        <ul *ngIf="expandedArea === area.areaId">
+          <li *ngFor="let department of departmentsByArea[area.areaId]" >
+            <div (click)="toggleDepartment(department.departmentId)" class="index_area_level1N">
+              {{ department.departmentName }}
+            </div>
+            
+            <!-- Mostrar perfiles relacionados con el departamento -->
+            <ul *ngIf="profilesByDepartment[department.departmentId]">
+              <li (click)="onDepartmentSelected(department.departmentId)" class="index_area_level2N"> 
+                {{ department.departmentName}}
+              </li>
+              <li *ngFor="let profile of profilesByDepartment[department.departmentId]" 
+                (click)="onProfileSelected(profile.profileId)" class="index_area_level2">
+                  {{ profile.profileName }}
+              </li>
+            </ul>
           </li>
         </ul>
       </div>

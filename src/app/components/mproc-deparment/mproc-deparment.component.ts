@@ -23,7 +23,7 @@ export class MprocDeparmentComponent {
 
   // Método para navegar a la página de detalle del manual
   goBack() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/ProcedimientosList']);
   }
 
   ngOnInit(): void {

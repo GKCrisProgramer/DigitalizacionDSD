@@ -9,38 +9,66 @@ import { environment } from '../../../environments/environment';
   styleUrl: './mproc-list.component.css'
 })
 export class MprocListComponent implements OnInit{
-  departments: any[] = [];
-  profilesByDepartment: { [key: number]: any[] } = {};  // Almacena puestos por departamento
-  expandedDepartment: number | null = null;
+  areas: any[] = [];
+  departmentsByArea: { [key: number]: any[] } = {};
+  profilesByArea: { [key: number]: any[] } = {};  // Almacena puestos por departamento
+  profilesByDepartment: { [key: number]: any[] } = {};  // Almacena perfiles por departamento
+  expandedArea: number | null = null;
 
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
-    this.getDepartments();  // Cargar todas las áreas al iniciar
+    this.getAreas();  // Cargar todas las áreas al iniciar
   }
 
-  getDepartments() {
-    this.http.get<any[]>(`${environment.apiUrl}/department`).subscribe(data => {
-      this.departments = data;
+  getAreas() {
+    this.http.get<any[]>(`${environment.apiUrl}/area`).subscribe(data => {
+      this.areas = data;
     });
   }
 
-  toggleDepartment(departmentId: number) {
-    if (this.expandedDepartment === departmentId) {
-      this.expandedDepartment = null;
+  toggleArea(areaId: number) {
+    if (this.expandedArea === areaId) {
+      this.expandedArea = null;
     } else {
-      this.expandedDepartment = departmentId;
-      if (!this.profilesByDepartment[departmentId]) {
-        this.getProfilesByDepartment(departmentId);
+      this.expandedArea = areaId;
+      if (!this.departmentsByArea[areaId]) {
+        this.getDepartmentsByArea(areaId);
+        this.getProfilesByArea(areaId);
       }
     }
   }
 
-  getProfilesByDepartment(profileId: number) {
-    this.http.get<any[]>(`${environment.apiUrl}/department-profile/${profileId}/profile`).subscribe(data => {
-      this.profilesByDepartment[profileId] = data;
+  getDepartmentsByArea(areaId: number) {
+    this.http.get<any[]>(`${environment.apiUrl}/area-department/${areaId}/departments`).subscribe(data =>{
+      this.departmentsByArea[areaId] = data;
+    })
+  }
+
+  getProfilesByArea(areaId: number) {
+    this.http.get<any[]>(`${environment.apiUrl}/area-profile/${areaId}/profiles`).subscribe(data => {
+      this.profilesByArea[areaId] = data;
     });
   }
+
+  // Nueva función para obtener perfiles por departamento
+  getProfilesByDepartment(departmentId: number) {
+    this.http.get<any[]>(`${environment.apiUrl}/department-profile/${departmentId}/profile`).subscribe(data => {
+      this.profilesByDepartment[departmentId] = data;  // Almacena los perfiles del departamento
+    });
+  }
+
+  // Modifica toggleArea para expandir departamentos y cargar perfiles
+  toggleDepartment(departmentId: number) {
+    if (this.profilesByDepartment[departmentId]) {
+      // Si ya se han cargado los perfiles, los oculta
+      delete this.profilesByDepartment[departmentId];
+    } else {
+      // Carga los perfiles si no han sido cargados
+      this.getProfilesByDepartment(departmentId);
+    }
+  }
+
 
   onProfileSelected(profileId: number){
     this.router.navigate(['/ProcedimientosProfile/', profileId]);
