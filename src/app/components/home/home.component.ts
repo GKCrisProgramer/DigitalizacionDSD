@@ -27,8 +27,11 @@ export class HomeComponent {
   }
 
   logout() {
-    localStorage.removeItem('authToken'); // Elimina el token
-    this.router.navigate(['/login']); // Redirige al login
+    const confirmLogout = window.confirm('¿Desea salir del Manual?');
+    if (confirmLogout) {
+      localStorage.removeItem('authToken');  // Eliminar el token
+      this.router.navigate(['/login']);   // Redirigir a la página de inicio de sesión
+    }
   }
 
   goToProcedures(){
