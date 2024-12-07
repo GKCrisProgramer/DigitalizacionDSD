@@ -1,56 +1,23 @@
-.container {
-  text-align: center;
-  padding: 20px;
-}
-  
-header {
-  margin-bottom: 20px;
-}
-  
-.logo {
-  width: 50px;
-  height: auto;
-  float: left;
+.pdf-container {
+  height: 80vh; /* Ocupa la mayor parte de la pantalla */
+  overflow-y: auto;
+  align-items: center;
+  display: block;
 }
 
-.logo:hover{
-  cursor: pointer;
+.center{
+  text-align: center;
 }
-  
-h1, h2 {
-  margin: 0;
-  padding: 0;
-}
-  
-.profiles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  justify-content: center;
-  margin: 20px 0;
-}
-  
-.profile-btn {
-  padding: 10px;
-  font-size: 16px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  box-shadow: 0px 0px 5px 0px #333;
-}
-  
-.profile-btn:hover {
-  background-color: #ddd;
-  box-shadow: 0px 0px 10px 0px #333;
-}
-  
+
+/*Botones de accion*/
 .action-buttons {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
+  padding: 20px;
 }
-  
-.action-buttons .btn {
+
+.btn {
   margin: 10px 0;
   padding: 10px 20px;
   background-color: #f0f0f0;
@@ -59,7 +26,7 @@ h1, h2 {
   box-shadow: 0px 0px 5px 0px #333;
 }
 
-.action-buttons .btn:hover {
+.btn:hover {
   background-color: #ddd;
   box-shadow: 0px 0px 10px 0px #333;
 }

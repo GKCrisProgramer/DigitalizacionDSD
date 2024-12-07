@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
-import {environment} from '../../../environments/environment';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { InductionCoursesService } from '../../services/induction-courses.service';
 
 @Component({
   selector: 'app-induction-courses',
@@ -11,29 +10,36 @@ import { Router } from '@angular/router';
 })
 export class InductionCoursesComponent implements OnInit{
   document: any;
-  profileId!: number;
+  documentId!: number;
   documentRoute!: SafeResourceUrl; // URL segura
 
   // Combinar las inyecciones de dependencias en un solo constructor
   constructor(
     private sanitizer: DomSanitizer,
-    private http: HttpClient,
-    private router: Router,) { }
+    private router: Router,
+    private route: ActivatedRoute,
+    private inductionCoursesService: InductionCoursesService,
+  ) { }
 
   // Método para navegar a la página de detalle del manual
   goBack() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/Cursos-lista']);
   }
 
   ngOnInit(): void {
-    // Llamada a la API para obtener el documento con ID 2
-    this.http.get<any>(`${environment.apiUrl}/document/14`).subscribe(document=> {
-      if (document && document.documentLinkRoute) {
-        const unsafeUrl = `https://drive.google.com/file/d/${document.documentLinkRoute}/preview`;
+    this.documentId = Number(this.route.snapshot.paramMap.get('documentId')!);
+  
+    this.inductionCoursesService.getDocument(this.documentId).subscribe((doc) => {
+      // Verificar si el documento tiene la estructura esperada
+      if (doc && doc.documentLinkRoute) { // Ajusta la verificación a la estructura real
+        this.document = doc;
+  
+        // Generar la URL segura con la ruta correcta
+        const unsafeUrl = `https://drive.google.com/file/d/${doc.documentLinkRoute}/preview`; // Accede directamente
         this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
+      } else {
+        console.error("Documento no encontrado o estructura inesperada:", doc);
       }
-    }, error => {
-      console.error('Error al obtener el documento', error);
     });
   }
 }

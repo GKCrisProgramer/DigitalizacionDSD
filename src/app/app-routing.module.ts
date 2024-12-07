@@ -14,7 +14,10 @@ import {OrgPPTXComponent} from './components/org-pptx/org-pptx.component';
 import {OrganizationChartPrezi2Component} from './components/org-prezi2/org-prezi2.component';
 import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prezi3.component';
 import {MProcProfileComponent} from './components/mproc-profile/mproc-profile.component';
+import {MprocDeparmentComponent} from './components/mproc-deparment/mproc-deparment.component';
 import {InductionCoursesComponent} from './components/induction-courses/induction-courses.component';
+import {MprocListComponent} from './components/mproc-list/mproc-list.component';
+import {InductionListComponent} from './components/induction-list/induction-list.component';
 import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
@@ -27,11 +30,14 @@ const routes: Routes = [
   { path: 'ProfileList', component: PerfilesComponent },
 
   // Rutas dinámicas para departamentos y perfiles
-  { path: 'department/:id', component:PypDepartmentComponent },
+  { path: 'department/:departmentId', component:PypDepartmentComponent },
   { path: 'profile/:profileId', component: PypProfileComponent },
   //{ path: 'desplegable-manual/:idPuesto', component: PypProfileComponent },
-  { path: 'Procedimientos', component: MProcProfileComponent },
-  { path: 'Cursos-Induccion', component: InductionCoursesComponent },
+  { path: 'ProcedimientosList', component: MprocListComponent },
+  { path: 'ProcedimientosProfile/:profileId', component: MProcProfileComponent },
+  { path: 'ProcedimientosDepartment/:departmentId', component: MprocDeparmentComponent },
+  { path: 'Cursos-lista', component: InductionListComponent },
+  { path: 'Cursos-Induccion/:documentId', component: InductionCoursesComponent },
 
   //ruta de organigram
   { path: 'org-list', component: OrgListComponent },

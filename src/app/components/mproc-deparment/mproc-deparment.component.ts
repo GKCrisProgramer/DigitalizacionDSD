@@ -1,39 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Router } from '@angular/router';
-import { DepartmentDocumentService } from '../../services/departamento-documentos.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DocumentProcedureDeparmentService } from '../../services/mproc-department.service';
 
 @Component({
-  selector: 'app-pyp-department',
-  templateUrl: './pyp-department.component.html',
-  styleUrl: './pyp-department.component.css'
+  selector: 'app-mproc-deparment',
+  templateUrl: './mproc-deparment.component.html',
+  styleUrl: './mproc-deparment.component.css'
 })
-export class PypDepartmentComponent /*implements OnInit*/{
+export class MprocDeparmentComponent {
   document: any;
   departmentId!: number;
   documentRoute!: SafeResourceUrl; // URL segura
 
   // Combinar las inyecciones de dependencias en un solo constructor
   constructor(
-    private router: Router,
     private route: ActivatedRoute,
-    private departmentDocumentService: DepartmentDocumentService,
-    private sanitizer: DomSanitizer) { }
+    private router: Router,
+    private documentProcedureDeparmentService: DocumentProcedureDeparmentService,
+    private sanitizer: DomSanitizer,
+  ) { }
 
   // Método para navegar a la página de detalle del manual
   goBack() {
-    this.router.navigate(['/manual-detail']);
+    this.router.navigate(['/ProcedimientosList']);
   }
 
-  // Lógica que se ejecuta al inicializar el componente
-  ngOnInit() {
+  ngOnInit(): void {
+
     // Obtener el ID del puesto desde la URL
     this.departmentId = Number(this.route.snapshot.paramMap.get('departmentId')!);
 
     // Llamar al servicio para obtener el documento relacionado con el puesto
-    this.departmentDocumentService.getDocumentByDepartmentInDetail(this.departmentId).subscribe((doc) => {
-    // Verificar si el documento tiene la estructura esperada
+    this.documentProcedureDeparmentService.getDocumentByDepartment(this.departmentId).subscribe((doc) => {
+      // Verificar si el documento tiene la estructura esperada
       if (doc && doc.document && doc.document.documentLinkRoute) {
         this.document = doc;
 
@@ -45,4 +45,5 @@ export class PypDepartmentComponent /*implements OnInit*/{
       }
     });
   }
+  
 }

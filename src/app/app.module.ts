@@ -21,7 +21,13 @@ import {OrganizationChartPrezi2Component} from './components/org-prezi2/org-prez
 import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prezi3.component';
 import {MProcProfileComponent} from './components/mproc-profile/mproc-profile.component';
 import {InductionCoursesComponent} from './components/induction-courses/induction-courses.component';
+
 import {NgOptimizedImage} from '@angular/common';
+
+import { MprocListComponent } from './components/mproc-list/mproc-list.component';
+import { MprocDeparmentComponent } from './components/mproc-deparment/mproc-deparment.component';
+import { InductionListComponent } from './components/induction-list/induction-list.component';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +47,9 @@ import {NgOptimizedImage} from '@angular/common';
     OrganizationChartPrezi3Component,
     MProcProfileComponent,
     InductionCoursesComponent,
+    MprocListComponent,
+    MprocDeparmentComponent,
+    InductionListComponent,
   ],
   imports: [
     BrowserModule,
