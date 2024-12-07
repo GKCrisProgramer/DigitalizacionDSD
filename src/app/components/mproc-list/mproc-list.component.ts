@@ -1,29 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { ManualPypDataService } from '../../services/manual-pyp.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
-  selector: 'app-manual-pyp',
-  templateUrl: './manual-pyp.component.html',
-  styleUrls: ['./manual-pyp.component.css']
+  selector: 'app-mproc-list',
+  templateUrl: './mproc-list.component.html',
+  styleUrl: './mproc-list.component.css'
 })
-export class ManualPYPComponent implements OnInit {
+export class MprocListComponent implements OnInit{
   areas: any[] = [];
-  departmentsByArea: { [key: number]: any[] } = {}; // Almacena departamentos por área
-  profilesByArea: { [key: number]: any[] } = {};    // Almacena perfiles por área
-  positionsByDepartment: { [key: number]: any[] } = {};  // Almacena puestos por departamento
-  expandedArea: number | null = null;              // Área seleccionada
+  departmentsByArea: { [key: number]: any[] } = {};
+  profilesByArea: { [key: number]: any[] } = {};  // Almacena puestos por departamento
+  profilesByDepartment: { [key: number]: any[] } = {};  // Almacena perfiles por departamento
+  expandedArea: number | null = null;
 
-  constructor(private dataService: ManualPypDataService, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
-    this.dataService.getAreas().subscribe(data => {
-      this.areas = data;
-    });
+    this.getAreas();  // Cargar todas las áreas al iniciar
   }
 
   getAreas() {
-    this.dataService.getAreas().subscribe(data => {
+    this.http.get<any[]>(`${environment.apiUrl}/area`).subscribe(data => {
       this.areas = data;
     });
   }
@@ -41,23 +40,20 @@ export class ManualPYPComponent implements OnInit {
   }
 
   getDepartmentsByArea(areaId: number) {
-    this.dataService.getDepartmentsByArea(areaId).subscribe(data => {
+    this.http.get<any[]>(`${environment.apiUrl}/area-department/${areaId}/departments`).subscribe(data =>{
       this.departmentsByArea[areaId] = data;
-    });
+    })
   }
 
   getProfilesByArea(areaId: number) {
-    this.dataService.getProfilesByArea(areaId).subscribe(data => {
+    this.http.get<any[]>(`${environment.apiUrl}/area-profile/${areaId}/profiles`).subscribe(data => {
       this.profilesByArea[areaId] = data;
     });
   }
 
-  // Agregar una propiedad para almacenar perfiles por departamento
-  profilesByDepartment: { [key: number]: any[] } = {};  // Almacena perfiles por departamento
-
   // Nueva función para obtener perfiles por departamento
   getProfilesByDepartment(departmentId: number) {
-    this.dataService.getProfilesByDepartment(departmentId).subscribe(data => {
+    this.http.get<any[]>(`${environment.apiUrl}/department-profile/${departmentId}/profile`).subscribe(data => {
       this.profilesByDepartment[departmentId] = data;  // Almacena los perfiles del departamento
     });
   }
@@ -73,12 +69,13 @@ export class ManualPYPComponent implements OnInit {
     }
   }
 
-  onProfileSelected(profileId: number) {
-    this.router.navigate(['/profile/', profileId]);
+
+  onProfileSelected(profileId: number){
+    this.router.navigate(['/ProcedimientosProfile/', profileId]);
   }
 
   onDepartmentSelected(departmentId: number) {
-    this.router.navigate(['/department/', departmentId]);
+    this.router.navigate(['/ProcedimientosDepartment/', departmentId]);
   }
 
   goBack() {

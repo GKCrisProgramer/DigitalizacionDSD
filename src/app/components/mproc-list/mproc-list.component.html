@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="manual-pyp.component.css">
+    <link rel="stylesheet" href="mproc-list.component.css">
 </head>
 <body>
   <div class="manual-detail-container">
@@ -12,7 +12,7 @@
     <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
     
     <!-- Título del manual -->
-    <h1 class="center">Manual de Descriptivos y Perfiles de Puesto</h1>
+    <h1 class="center">Manual de Procedimientos</h1>
     <h2>Índice</h2>
     <!-- Índice del manual -->
     <div class="index">
@@ -37,8 +37,8 @@
             
             <!-- Mostrar perfiles relacionados con el departamento -->
             <ul *ngIf="profilesByDepartment[department.departmentId]">
-              <li (click)="onDepartmentSelected(department.departmentId)" class="index_area_level2">
-                {{ department.departmentName }} 
+              <li (click)="onDepartmentSelected(department.departmentId)" class="index_area_level2N"> 
+                {{ department.departmentName}}
               </li>
               <li *ngFor="let profile of profilesByDepartment[department.departmentId]" 
                 (click)="onProfileSelected(profile.profileId)" class="index_area_level2">

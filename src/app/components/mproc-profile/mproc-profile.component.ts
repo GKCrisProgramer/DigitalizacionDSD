@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
-import {environment} from '../../../environments/environment';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DocumentProcedureProceduraService } from '../../services/mproc-profile.service';
 
 @Component({
   selector: 'app-mproc-profile',
@@ -16,9 +15,11 @@ export class MProcProfileComponent implements OnInit{
 
   // Combinar las inyecciones de dependencias en un solo constructor
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private documentProcedureProceduraService: DocumentProcedureProceduraService,
     private sanitizer: DomSanitizer,
-    private http: HttpClient,
-    private router: Router,) { }
+  ) { }
 
   // Método para navegar a la página de detalle del manual
   goBack() {
@@ -26,14 +27,22 @@ export class MProcProfileComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    // Llamada a la API para obtener el documento con ID 2
-    this.http.get<any>(`${environment.apiUrl}/document/13`).subscribe(document=> {
-      if (document && document.documentLinkRoute) {
-        const unsafeUrl = `https://drive.google.com/file/d/${document.documentLinkRoute}/preview`;
+
+    // Obtener el ID del puesto desde la URL
+    this.profileId = Number(this.route.snapshot.paramMap.get('profileId')!);
+
+    // Llamar al servicio para obtener el documento relacionado con el puesto
+    this.documentProcedureProceduraService.getDocumentByProfile(this.profileId).subscribe((doc) => {
+      // Verificar si el documento tiene la estructura esperada
+      if (doc && doc.document && doc.document.documentLinkRoute) {
+        this.document = doc;
+
+        // Generar la URL segura con la ruta correcta
+        const unsafeUrl = `https://drive.google.com/file/d/${doc.document.documentLinkRoute}/preview`;
         this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
+      } else {
+        console.error("Documento no encontrado o estructura inesperada:", doc);
       }
-    }, error => {
-      console.error('Error al obtener el documento', error);
     });
   }
 }
