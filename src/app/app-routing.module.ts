@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'ProfileList', component: PerfilesComponent },
 
   // Rutas dinámicas para departamentos y perfiles
-  { path: 'department/:id', component:PypDepartmentComponent },
+  { path: 'department/:departmentId', component:PypDepartmentComponent },
   { path: 'profile/:profileId', component: PypProfileComponent },
   //{ path: 'desplegable-manual/:idPuesto', component: PypProfileComponent },
   { path: 'ProcedimientosList', component: MprocListComponent },

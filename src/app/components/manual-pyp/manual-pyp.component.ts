@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';
+import { ManualPypDataService } from '../../services/manual-pyp.service';
 
 @Component({
   selector: 'app-manual-pyp',
@@ -15,14 +14,16 @@ export class ManualPYPComponent implements OnInit {
   positionsByDepartment: { [key: number]: any[] } = {};  // Almacena puestos por departamento
   expandedArea: number | null = null;              // Área seleccionada
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private dataService: ManualPypDataService, private router: Router) {}
 
   ngOnInit() {
-    this.getAreas();  // Cargar todas las áreas al iniciar
+    this.dataService.getAreas().subscribe(data => {
+      this.areas = data;
+    });
   }
 
   getAreas() {
-    this.http.get<any[]>(`${environment.apiUrl}/area`).subscribe(data => {
+    this.dataService.getAreas().subscribe(data => {
       this.areas = data;
     });
   }
@@ -40,13 +41,13 @@ export class ManualPYPComponent implements OnInit {
   }
 
   getDepartmentsByArea(areaId: number) {
-    this.http.get<any[]>(`${environment.apiUrl}/area-department/${areaId}/departments`).subscribe(data => {
+    this.dataService.getDepartmentsByArea(areaId).subscribe(data => {
       this.departmentsByArea[areaId] = data;
     });
   }
 
   getProfilesByArea(areaId: number) {
-    this.http.get<any[]>(`${environment.apiUrl}/area-profile/${areaId}/profiles`).subscribe(data => {
+    this.dataService.getProfilesByArea(areaId).subscribe(data => {
       this.profilesByArea[areaId] = data;
     });
   }
@@ -56,7 +57,7 @@ export class ManualPYPComponent implements OnInit {
 
   // Nueva función para obtener perfiles por departamento
   getProfilesByDepartment(departmentId: number) {
-    this.http.get<any[]>(`${environment.apiUrl}/department-profile/${departmentId}/profile`).subscribe(data => {
+    this.dataService.getProfilesByDepartment(departmentId).subscribe(data => {
       this.profilesByDepartment[departmentId] = data;  // Almacena los perfiles del departamento
     });
   }
@@ -74,6 +75,10 @@ export class ManualPYPComponent implements OnInit {
 
   onProfileSelected(profileId: number) {
     this.router.navigate(['/profile/', profileId]);
+  }
+
+  onDepartmentSelected(departmentId: number) {
+    this.router.navigate(['/department/', departmentId]);
   }
 
   goBack() {

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { DepartmentDocumentService } from '../../services/departamento-documentos.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pyp-department',
@@ -7,23 +10,39 @@ import { Router } from '@angular/router';
   styleUrl: './pyp-department.component.css'
 })
 export class PypDepartmentComponent /*implements OnInit*/{
-  constructor(private router: Router) {}
+  document: any;
+  departmentId!: number;
+  documentRoute!: SafeResourceUrl; // URL segura
 
-  perfiles = ['Auditor interno operativo de cedis', 'Auxiliar de inventario', 'Auxiliar de operaciones', 'Compras', 'Aux. Administrativo (Iniciativas)', 'Aux. Administrativo Operaciones CEDIS', 'Capacitador de administrativo de CEDIS', 'estor De Cartera', 'Aux. Administrativo (Cartera)', 'Auditor Interno Operativo de CEDIS', 'Coordinador Logística Kiosko', 'Aux. Administrativo  (Logística Kiosko)'];
+  // Combinar las inyecciones de dependencias en un solo constructor
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private departmentDocumentService: DepartmentDocumentService,
+    private sanitizer: DomSanitizer) { }
 
-  goToProfile(profileId: Number){
-    this.router.navigate(['/profile', profileId])
+  // Método para navegar a la página de detalle del manual
+  goBack() {
+    this.router.navigate(['/manual-detail']);
   }
 
-  goBack(){
-    this.router.navigate(['/manual-detail'])
-  }
+  // Lógica que se ejecuta al inicializar el componente
+  ngOnInit() {
+    // Obtener el ID del puesto desde la URL
+    this.departmentId = Number(this.route.snapshot.paramMap.get('departmentId')!);
 
-  goHome() {
-    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
-  }
+    // Llamar al servicio para obtener el documento relacionado con el puesto
+    this.departmentDocumentService.getDocumentByDepartmentInDetail(this.departmentId).subscribe((doc) => {
+    // Verificar si el documento tiene la estructura esperada
+      if (doc && doc.document && doc.document.documentLinkRoute) {
+        this.document = doc;
 
-  gotoOrganigrama() {
-    this.router.navigate(['/organigrama']);  // Cambia '/home' según la ruta deseada
+        // Generar la URL segura con la ruta correcta
+        const unsafeUrl = `https://drive.google.com/file/d/${doc.document.documentLinkRoute}/preview`;
+        this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
+      } else {
+        console.error("Documento no encontrado o estructura inesperada:", doc);
+      }
+    });
   }
 }
