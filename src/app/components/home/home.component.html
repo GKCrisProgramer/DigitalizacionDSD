@@ -1,79 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="home.component.css">
-</head>
-<body>
-  <div class="home-container">
-    <div class="home-logout">
-      <button (click)="logout()" class="logout-button">Logout</button>
+<div class="home-container">
+  <div class="home-logout">
+    <button (click)="logout()" class="logout-button">Logout</button>
+  </div>
+  <div class="Cont-mess">
+    <h1 class="welcome-message">Bienvenido al Manual Organizacional de DSD</h1>
+  </div>
+  <div class="image-section">
+
+    <div class="int-but">
+      <button class="image-button" (click)="goToIntro()">Introduccion</button>
     </div>
-    <div class="Cont-mess">
-    <!--Titulo de la pagina-->
-      <h1 class="welcome-message">Bienvenido al Manual Organizacional de DSD</h1>
+
+    <div>
+      <img src="/logo.png" alt="Imagen Representativa" class="main-image">
     </div>
-    <div class="image-section">
-      <!--ZONA DE BOTON QUE TE ENVIA A LA PESTAÑA DE INTRODUCCION-->
-      <div class="int-but">
-        <button class="image-button" (click)="goToIntro()">Introduccion</button>
-      </div>
-      <!--IMAGEN DE LA EMPRESA-->
-      <div>
-        <img src="/logo.png" alt="Imagen Representativa" class="main-image">
-      </div>
-      <!--ZONA DE BUSQUEDA PARA LOS MANUALES-->
-      <div>
-        <button class="search" (click)="goToManualList()">Buscar</button>
-      </div>
+
+    <div>
+      <p-autoComplete 
+      [(ngModel)]="searchTerm" 
+      [suggestions]="data" 
+      (completeMethod)="search($event)"
+      field="profileName"
+      class="search">
+    </p-autoComplete>
+    </div> 
+  </div>
+
+  <div class="subtitle-section">
+    <h2>Menú de Accesos</h2>
+  </div>
+  <div class="circular-buttons">
+    <div class="quick-access">
+      <button class="circular-button" (click)="goToOrganigrama()">
+        <img src="/organigrama.png" alt="icon" class="display-settings-icon">
+      </button>
+      <p class="txtb">Estructura Organizacional</p>
     </div>
-    <!--TITULO DE LOS ENLACES MOVIMIENTO RAPIDO-->
-    <div class="subtitle-section">
-      <h2>Menú de Accesos</h2>
-    </div>
-    <!--Enlaces para las otras pantallas de organigramas y perfiles-->
-    <!-- <div class="quick-access">
-      <a (click)="goToOrganigrama()">Organigrama</a>
-      <a href="#">Perfiles</a>
-    </div> -->
-    <!--botones de envio a manuales-->
-    <div class="circular-buttons">
-      <div class="quick-access">
-        <button class="circular-button" (click)="goToOrganigrama()">
-          <img src="/organigrama.png" alt="icon" class="display-settings-icon">
-        </button>
-        <p class="txtb">Estructura Organizacional</p>
-      </div>
     
-      <div class="quick-access">
-        <button class="circular-button" (click)="goToPYP()">
-          <img src="/panel-de-control.png" alt="icon" class="display-settings-icon">
-        </button>
-        <p class="txtb">Manual de Descriptivos y Perfiles de Puestos</p>
-      </div>
+    <div class="quick-access">
+      <button class="circular-button" (click)="goToPYP()">
+        <img src="/panel-de-control.png" alt="icon" class="display-settings-icon">
+      </button>
+      <p class="txtb">Manual de Descriptivos y Perfiles de Puestos</p>
+    </div>
     
-      <div class="quick-access">
-        <button class="circular-button" (click)="goToProcedures()">
-          <img src="/curriculum-vitae.png" alt="icon" class="display-settings-icon">
-        </button>
-        <p class="txtb">Manual de Procedimientos</p>
-      </div>
+    <div class="quick-access">
+      <button class="circular-button" (click)="goToProcedures()">
+        <img src="/curriculum-vitae.png" alt="icon" class="display-settings-icon">
+      </button>
+      <p class="txtb">Manual de Procedimientos</p>
+    </div>
     
-      <div class="quick-access">
-        <button class="circular-button">
-          <img src="/politica.png" alt="icon" class="display-settings-icon">
-        </button>
-        <p class="txtb">Manual de Políticas y Lineamientos</p>
-      </div>
-      <div class="quick-access">
-        <button class="circular-button" (click)="goToInductionCourses()">
-          <img src="/educacion.png" alt="icon" class="display-settings-icon">
-        </button>
-        <p class="txtb">Cursos de Capacitación</p>
-      </div>
-    </div>    
-  </div>      
-</body>
-</html>
+    <div class="quick-access">
+      <button class="circular-button">
+        <img src="/politica.png" alt="icon" class="display-settings-icon">
+      </button>
+      <p class="txtb">Manual de Políticas y Lineamientos</p>
+    </div>
+
+    <div class="quick-access">
+      <button class="circular-button" (click)="goToInductionCourses()">
+        <img src="/educacion.png" alt="icon" class="display-settings-icon">
+      </button>
+      <p class="txtb">Cursos de Capacitación</p>
+    </div>
+  </div>    
+</div>      
