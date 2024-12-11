@@ -14,7 +14,7 @@ import {environment} from '../../../environments/environment';
 })
 export class HomeComponent {
   searchTerm: string = '';
-  data: any[] = [];
+  filteredData: any[] = [];
 
   constructor(
     private router: Router,
@@ -23,11 +23,22 @@ export class HomeComponent {
 
   search(event: any) {
     const query = event.query;
-  
-    this.http.get<any[]>(`${environment.apiUrl}/profile/searchByQuery?q=${query}`).subscribe((data) => {
-      this.data = data; // La respuesta ya contiene profileId y profileName
-    });
+
+    this.http
+      .get<any[]>(`${environment.apiUrl}/document-profile/searchProfilesAndDocuments?q=${query}`)
+      .subscribe((data) => {
+        this.filteredData = data.map((item) => ({
+          label: `${item.profileName} > ${item.documentName || 'Sin manual relacionado'}`,
+          value: item.profileId, // Puede usarse para redirigir o realizar acciones específicas
+        }));
+      });
   }
+
+  // onItemSelect(event: any) {
+  //   const profileId = event.value;
+  //   this.router.navigate(['/profile/', profileId]);
+  // }
+  
 
   goToManualList() {
     this.router.navigate(['/manual-list']);

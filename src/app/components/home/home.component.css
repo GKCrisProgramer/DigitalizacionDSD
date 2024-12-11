@@ -65,6 +65,11 @@
   box-shadow: 0px 0px 10px 0px #555;
 }
 
+.autocomplete-container {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
  /*Boton de Buscar*/
 .search{
   margin-right: 20px;

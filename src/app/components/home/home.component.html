@@ -15,15 +15,17 @@
       <img src="/logo.png" alt="Imagen Representativa" class="main-image">
     </div>
 
-    <div>
-      <p-autoComplete 
-      [(ngModel)]="searchTerm" 
-      [suggestions]="data" 
-      (completeMethod)="search($event)"
-      field="profileName"
-      class="search">
-    </p-autoComplete>
-    </div> 
+    <div class="autocomplete-container">
+      <p-autoComplete
+        [(ngModel)]="searchTerm"
+        [suggestions]="filteredData"
+        (completeMethod)="search($event)"
+        field="label"
+        [dropdown]="true"
+        placeholder="Buscar perfiles"
+      >
+      </p-autoComplete>
+    </div>
   </div>
 
   <div class="subtitle-section">
