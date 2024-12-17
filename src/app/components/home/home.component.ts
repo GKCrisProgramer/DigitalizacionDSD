@@ -29,16 +29,15 @@ export class HomeComponent {
       .subscribe((data) => {
         this.filteredData = data.map((item) => ({
           label: `${item.profileName} > ${item.documentName || 'Sin manual relacionado'}`,
-          value: item.profileId, // Puede usarse para redirigir o realizar acciones específicas
+          value: item.profileId, // Puede usarse para redirigir o realizar acciones específica
         }));
       });
   }
 
-  // onItemSelect(event: any) {
-  //   const profileId = event.value;
-  //   this.router.navigate(['/profile/', profileId]);
-  // }
-  
+  onItemSelect(event: any) {
+    const profileId = event.value?.value; // Accede explícitamente al ID
+    this.router.navigate(['/profile/', profileId]); // Redirige al componente de perfil
+  }
 
   goToManualList() {
     this.router.navigate(['/manual-list']);

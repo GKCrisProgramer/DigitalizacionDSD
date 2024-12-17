@@ -46,13 +46,16 @@
 /* Sección de imagen */
 .image-section {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  justify-content: center;  
+  align-items: center;      
+  text-align: center;       
+  gap: 40px;                
+  margin: 20px auto;        
+  width: 100%;              
 }
 
 /*Boton de la introduccion*/
 .image-button {
-  margin-left: 20px;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -60,17 +63,24 @@
   box-shadow: 0px 0px 5px 0px #333;
 }
 
-.image-button:hover{
+.image-button:hover {
   background-color: #ccc;
   box-shadow: 0px 0px 10px 0px #555;
 }
 
-.autocomplete-container {
-  max-width: 600px;
-  margin: 20px auto;
+/* Imagen principal */
+.main-image {
+  width: 200px;           
+  height: auto;
 }
 
- /*Boton de Buscar*/
+/* Contenedor de autocompletado */
+.autocomplete-container {
+  max-width: 300px;
+  width: 100%;
+}
+
+ /*auto acompletar de Buscar*/
 .search{
   margin-right: 20px;
   cursor: pointer;
@@ -79,12 +89,6 @@
 .search:hover{
   background-color: #ccc;
   box-shadow: 0px 0px 10px 0px #555;
-}
-
-.main-image {
-  width: 200px; /* Ajusta el tamaño según sea necesario */
-  height: auto;
-  margin: 0px 120px;
 }
 
 /* Sección de subtítulo */
@@ -103,14 +107,14 @@
 .circular-buttons {
   display: flex;
   justify-content: center;
-  gap: 40px; /* Espacio entre cada grupo de botón y texto */
+  gap: 40px; 
   margin-top: 20px;
 }
 
 .quick-access {
   display: flex;
-  flex-direction: column; /* Alinea el botón y el texto en columna */
-  align-items: center; /* Centra ambos horizontalmente */
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .circular-button {
@@ -123,7 +127,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-bottom: 10px; /* Espacio entre el botón y el texto */
+  margin-bottom: 10px; 
   box-shadow: 0px 0px 10px #333;
 }
 
@@ -141,6 +145,6 @@
   text-align: center;
   font-family: sans-serif;
   font-size: 14px;
-  max-width: 120px; /* Ajusta para que los textos largos no desborden */
+  max-width: 120px; 
   word-wrap: break-word;
 }
