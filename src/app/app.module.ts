@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms'; // Necesario para ngModel
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthGuard } from './auth.guard';
 import {LoginComponent} from './components/login/login.component';
 import {HomeComponent} from './components/home/home.component';
 import {IntroComponent} from './components/intro/intro.component';
@@ -21,9 +20,13 @@ import {OrganizationChartPrezi2Component} from './components/org-prezi2/org-prez
 import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prezi3.component';
 import {MProcProfileComponent} from './components/mproc-profile/mproc-profile.component';
 import {InductionCoursesComponent} from './components/induction-courses/induction-courses.component';
+
+import {NgOptimizedImage} from '@angular/common';
+
 import { MprocListComponent } from './components/mproc-list/mproc-list.component';
 import { MprocDeparmentComponent } from './components/mproc-deparment/mproc-deparment.component';
 import { InductionListComponent } from './components/induction-list/induction-list.component';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -55,6 +58,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     HomeComponent,
     BrowserAnimationsModule,
+    NgOptimizedImage,
   ],
   providers: [],
   bootstrap: [AppComponent]
