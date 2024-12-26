@@ -18,13 +18,13 @@ import {OrgListComponent} from './components/org-list/org-list.component';
 import {OrgPPTXComponent} from './components/org-pptx/org-pptx.component';
 import {OrganizationChartPrezi2Component} from './components/org-prezi2/org-prezi2.component';
 import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prezi3.component';
-import {MProcProfileComponent} from './components/mproc-profile/mproc-profile.component';
+import {ManualProcProfileComponent} from './components/mproc-profile/mproc-profile.component';
 import {InductionCoursesComponent} from './components/induction-courses/induction-courses.component';
 
 import {NgOptimizedImage} from '@angular/common';
 
 import { MprocListComponent } from './components/mproc-list/mproc-list.component';
-import { MprocDeparmentComponent } from './components/mproc-deparment/mproc-deparment.component';
+import { ManualprocDeparmentComponent } from './components/mproc-deparment/mproc-deparment.component';
 import { InductionListComponent } from './components/induction-list/induction-list.component';
 
 
@@ -45,10 +45,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     OrgPPTXComponent,
     OrganizationChartPrezi2Component,
     OrganizationChartPrezi3Component,
-    MProcProfileComponent,
+    ManualProcProfileComponent,
     InductionCoursesComponent,
     MprocListComponent,
-    MprocDeparmentComponent,
+    ManualprocDeparmentComponent,
     InductionListComponent,
   ],
   imports: [

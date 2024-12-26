@@ -1,54 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="mproc-list.component.css">
-</head>
-<body>
-  <div class="manual-detail-container">
-    <!-- Logo en la parte superior izquierda -->
-    <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
+<div class="manual-detail-container">
+  <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
     
-    <!-- Título del manual -->
-    <h1 class="center">Manual de Procedimientos</h1>
-    <h2>Índice</h2>
-    <!-- Índice del manual -->
-    <div class="index">
-      <div *ngFor="let area of areas">
-        <h3 (click)="toggleArea(area.areaId)" class="index_area">
-          {{ area.areaName }}
-        </h3>
+  <h1 class="center">Manual de Procedimientos</h1>
+  <h2>Índice</h2>
+  <div class="index">
+    <div *ngFor="let area of areas">
+      <h3 (click)="toggleArea(area.areaId)" class="index_area">
+        {{ area.areaName }}
+      </h3>
       
-        <!-- Mostrar perfiles del área directamente -->
-        <ul *ngIf="expandedArea === area.areaId && profilesByArea[area.areaId]?.length">
-          <li *ngFor="let profile of profilesByArea[area.areaId]" (click)="onProfileSelected(profile.profileId)" class="index_area_level1">
-            {{ profile.profileName }}
-          </li>
-        </ul>
+      <ul *ngIf="expandedArea === area.areaId && profilesByArea[area.areaId]?.length">
+        <li *ngFor="let profile of profilesByArea[area.areaId]" (click)="onProfileSelected(profile.profileId)" class="index_area_level1">
+          {{ profile.profileName }}
+        </li>
+      </ul>
     
-        <!-- Mostrar departamentos relacionados con el área -->
-        <ul *ngIf="expandedArea === area.areaId">
-          <li *ngFor="let department of departmentsByArea[area.areaId]" >
-            <div (click)="toggleDepartment(department.departmentId)" class="index_area_level1N">
-              {{ department.departmentName }}
-            </div>
+      <ul *ngIf="expandedArea === area.areaId">
+        <li *ngFor="let department of departmentsByArea[area.areaId]" >
+          <div (click)="toggleDepartment(department.departmentId)" class="index_area_level1N">
+            {{ department.departmentName }}
+          </div>
             
-            <!-- Mostrar perfiles relacionados con el departamento -->
-            <ul *ngIf="profilesByDepartment[department.departmentId]">
-              <li (click)="onDepartmentSelected(department.departmentId)" class="index_area_level2N"> 
-                {{ department.departmentName}}
-              </li>
-              <li *ngFor="let profile of profilesByDepartment[department.departmentId]" 
-                (click)="onProfileSelected(profile.profileId)" class="index_area_level2">
-                  {{ profile.profileName }}
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div> 
-  </div>
-</body>
-</html>
+          <ul *ngIf="profilesByDepartment[department.departmentId]">
+            <li (click)="onDepartmentSelected(department.departmentId)" class="index_area_level2N"> 
+              {{ department.departmentName}}
+            </li>
+            <li *ngFor="let profile of profilesByDepartment[department.departmentId]" 
+            (click)="onProfileSelected(profile.profileId)" class="index_area_level2">
+              {{ profile.profileName }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div> 
+</div>

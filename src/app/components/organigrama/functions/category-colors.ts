@@ -1,4 +1,3 @@
-// category-colors.ts
 export const categoryColors: { [key: string]: string } = {
     'VMOM': '#FFD966',
     'VOSE': '#9DC3E6',

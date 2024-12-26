@@ -1,6 +1,4 @@
-/* Estilos generales */
-/* Estilos generales */
-body {
+.body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -44,14 +42,13 @@ body {
     cursor: pointer;
 }
 
-/* Sección de contenido */
 .content {
     margin: 20px 0;
     line-height: 1.6;
     text-align: justify;
     max-height: 300px;
     overflow-y: auto;
-    padding-right: 10px; /* Para espacio antes del scrollbar */
+    padding-right: 10px;
 }
 
 .puestos {
@@ -59,7 +56,6 @@ body {
     color: #333;
 }
 
-/* Sección para las imágenes del pdf */
 .pdf-viewer {
     margin-top: 20px;
     border: 1px solid #ccc;
@@ -67,7 +63,6 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Pie de página con el enlace de volver */
 .footer {
     display: flex;
     justify-content: flex-start;

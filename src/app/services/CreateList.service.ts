@@ -5,7 +5,7 @@ import {environment} from '../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class ManualPypDataService {
+export class CreateListService {
   constructor(private http: HttpClient) {}
 
   getAreas() {

@@ -8,12 +8,11 @@ import { DocumentProcedureDeparmentService } from '../../services/mproc-departme
   templateUrl: './mproc-deparment.component.html',
   styleUrl: './mproc-deparment.component.css'
 })
-export class MprocDeparmentComponent {
+export class ManualprocDeparmentComponent implements OnInit{
   document: any;
   departmentId!: number;
   documentRoute!: SafeResourceUrl; // URL segura
 
-  // Combinar las inyecciones de dependencias en un solo constructor
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -28,16 +27,12 @@ export class MprocDeparmentComponent {
 
   ngOnInit(): void {
 
-    // Obtener el ID del puesto desde la URL
     this.departmentId = Number(this.route.snapshot.paramMap.get('departmentId')!);
 
-    // Llamar al servicio para obtener el documento relacionado con el puesto
     this.documentProcedureDeparmentService.getDocumentByDepartment(this.departmentId).subscribe((doc) => {
-      // Verificar si el documento tiene la estructura esperada
       if (doc && doc.document && doc.document.documentLinkRoute) {
         this.document = doc;
 
-        // Generar la URL segura con la ruta correcta
         const unsafeUrl = `https://drive.google.com/file/d/${doc.document.documentLinkRoute}/preview`;
         this.documentRoute = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
       } else {

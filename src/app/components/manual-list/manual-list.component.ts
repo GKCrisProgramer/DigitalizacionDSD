@@ -11,12 +11,12 @@ export class ManualListComponent {
   constructor(private router: Router) {}
 
   goToManualDetail() {
-    this.router.navigate(['/manual-detail']);  // Navega a la pantalla del manual
+    this.router.navigate(['/manual-detail']);  
   }
   goToStart(){
-    this.router.navigate(['/home']) // Navega a la pantalla de inicio
+    this.router.navigate(['/home']);
   }
   goHome() {
-    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+    this.router.navigate(['/home']);
   }
 }

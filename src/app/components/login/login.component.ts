@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import {environment} from '../../../environments/environment';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +11,7 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   onSubmit() {
     const loginData = {
@@ -20,12 +19,11 @@ export class LoginComponent {
       password: this.password,
     };
   
-    this.http.post<any>(`${environment.apiUrl}/user/login`, loginData).subscribe(
+    this.loginService.login(this.username, this.password).subscribe(
       (response) => {
         if (response.success) {
-          // Almacena el token en el localStorage
           localStorage.setItem('authToken', response.token);
-          this.router.navigate(['/home']); // Redirige al home
+          this.router.navigate(['/home']); 
         } else {
           alert(response.message);
         }
