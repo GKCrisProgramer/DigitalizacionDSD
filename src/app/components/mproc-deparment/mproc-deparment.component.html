@@ -1,15 +1,11 @@
-<body>
-  
-    <div *ngIf="document">
-        <h3>Documento relacionado con el puesto</h3>
-        <p class="center">
-            <iframe [src]="documentRoute" width="1200" height="800"></iframe>
-        </p>
-    </div>
+<div *ngIf="document">
+    <h3>Documento relacionado con el puesto</h3>
+    <p class="center">
+        <iframe [src]="documentRoute" width="1200" height="800"></iframe>
+    </p>
+</div>
           
-    <div class="action-buttons">
-        <button class="btn">Descargar</button>
-        <button class="btn" (click)="goBack()">Volver</button>
-    </div>
-      
-</body>
+<div class="action-buttons">
+    <button class="btn">Descargar</button>
+    <button class="btn" (click)="goBack()">Volver</button>
+</div>
