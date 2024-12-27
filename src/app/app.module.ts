@@ -23,7 +23,7 @@ import {InductionCoursesComponent} from './components/induction-courses/inductio
 
 import {NgOptimizedImage} from '@angular/common';
 
-import { MprocListComponent } from './components/mproc-list/mproc-list.component';
+import { ManualProcListComponent } from './components/mproc-list/mproc-list.component';
 import { ManualprocDeparmentComponent } from './components/mproc-deparment/mproc-deparment.component';
 import { InductionListComponent } from './components/induction-list/induction-list.component';
 
@@ -47,7 +47,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     OrganizationChartPrezi3Component,
     ManualProcProfileComponent,
     InductionCoursesComponent,
-    MprocListComponent,
+    ManualProcListComponent,
     ManualprocDeparmentComponent,
     InductionListComponent,
   ],

@@ -16,12 +16,11 @@ import {OrganizationChartPrezi3Component} from './components/org-prezi3/org-prez
 import {ManualProcProfileComponent} from './components/mproc-profile/mproc-profile.component';
 import {ManualprocDeparmentComponent} from './components/mproc-deparment/mproc-deparment.component';
 import {InductionCoursesComponent} from './components/induction-courses/induction-courses.component';
-import {MprocListComponent} from './components/mproc-list/mproc-list.component';
+import {ManualProcListComponent} from './components/mproc-list/mproc-list.component';
 import {InductionListComponent} from './components/induction-list/induction-list.component';
 import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
-  //agregar esta ruta
   { path: 'login', component: LoginComponent },
   { path: 'intro', component: IntroComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
@@ -29,29 +28,24 @@ const routes: Routes = [
   { path: 'manual-detail', component: ManualPYPComponent },
   { path: 'ProfileList', component: PerfilesComponent },
 
-  // Rutas dinámicas para departamentos y perfiles
   { path: 'department/:departmentId', component:PypDepartmentComponent },
   { path: 'profile/:profileId', component: PypProfileComponent },
-  //{ path: 'desplegable-manual/:idPuesto', component: PypProfileComponent },
-  { path: 'ProcedimientosList', component: MprocListComponent },
+
+  { path: 'ProcedimientosList', component: ManualProcListComponent },
   { path: 'ProcedimientosProfile/:profileId', component: ManualProcProfileComponent },
   { path: 'ProcedimientosDepartment/:departmentId', component: ManualprocDeparmentComponent },
   { path: 'Cursos-lista', component: InductionListComponent },
   { path: 'Cursos-Induccion/:documentId', component: InductionCoursesComponent },
 
-  //ruta de organigram
   { path: 'org-list', component: OrgListComponent },
   { path: 'organization-chart', component: OrganigramaComponent },
   { path: 'org-PPTX', component: OrgPPTXComponent },
   { path: 'org-Prezi2', component: OrganizationChartPrezi2Component },
   { path: 'org-Prezi3', component: OrganizationChartPrezi3Component },
 
-  //ruta principal
-  //{ path: '', redirectTo: '/home', pathMatch: 'full' },
-  // cambiar a esta ruta cuando este lista
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
-  { path: '**', redirectTo: 'login' }, // Redirige al login por defecto
+  { path: '**', redirectTo: 'login' }, 
 
 ];
 

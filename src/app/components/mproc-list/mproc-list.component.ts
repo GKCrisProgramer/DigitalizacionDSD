@@ -8,7 +8,7 @@ import { CreateListService } from '../../services/CreateList.service';
   templateUrl: './mproc-list.component.html',
   styleUrl: './mproc-list.component.css'
 })
-export class MprocListComponent implements OnInit{
+export class ManualProcListComponent implements OnInit{
   areas: any[] = [];
   departmentsByArea: { [key: number]: any[] } = {};
   profilesByArea: { [key: number]: any[] } = {};
