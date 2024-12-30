@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { InductionCoursesService } from '../../services/induction-courses.service';
 
 @Component({
@@ -15,14 +15,9 @@ export class InductionCoursesComponent implements OnInit{
 
   constructor(
     private sanitizer: DomSanitizer,
-    private router: Router,
     private route: ActivatedRoute,
     private inductionCoursesService: InductionCoursesService,
   ) { }
-
-  goBack() {
-    this.router.navigate(['/Cursos-lista']);
-  }
 
   ngOnInit(): void {
     this.documentId = Number(this.route.snapshot.paramMap.get('documentId')!);

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Router } from '@angular/router';
 import { DocumentProfileService } from '../../services/pyp-profile.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -15,15 +14,10 @@ export class PypProfileComponent implements OnInit{
   documentRoute!: SafeResourceUrl;
 
   constructor(
-    private router: Router,
     private route: ActivatedRoute,
     private documentProfileService: DocumentProfileService,
     private sanitizer: DomSanitizer
   ) { }
-
-  goBack() {
-    this.router.navigate(['/manual-detail']);
-  }
 
   ngOnInit() {
     this.profileId = Number(this.route.snapshot.paramMap.get('profileId')!);

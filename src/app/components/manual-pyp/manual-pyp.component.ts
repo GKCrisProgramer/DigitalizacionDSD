@@ -70,11 +70,19 @@ export class ManualPYPComponent implements OnInit {
   }
 
   onProfileSelected(profileId: number) {
-    this.router.navigate(['/profile/', profileId]);
+    const url = `/profile/${profileId}`;
+    
+    const option = 
+    'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,top=100,left=100,width=800,height=600';
+    window.open(url, '_blank', option);
   }
-
+  
   onDepartmentSelected(departmentId: number) {
-    this.router.navigate(['/department/', departmentId]);
+    const url = `/department/${departmentId}`;
+
+    const option = 
+    'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,top=100,left=100,width=800,height=600';
+    window.open(url, '_blank', option); 
   }
 
   goBack() {

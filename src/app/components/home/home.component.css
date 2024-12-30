@@ -36,6 +36,7 @@
 .welcome-message {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 48px;
 }
 
 .image-section {
@@ -67,8 +68,7 @@
 }
 
 .autocomplete-container {
-  max-width: 300px;
-  width: 100%;
+  max-width: 250px;
 }
 
 .search{
@@ -131,7 +131,7 @@
 .txtb {
   text-align: center;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   max-width: 120px; 
   word-wrap: break-word;
 }
