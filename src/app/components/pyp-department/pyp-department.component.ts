@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-pyp-department',
   templateUrl: './pyp-department.component.html',
-  styleUrl: './pyp-department.component.css'
+  styleUrls: ['./pyp-department.component.css']
 })
 export class PypDepartmentComponent implements OnInit{
   document: any;

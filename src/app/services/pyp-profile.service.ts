@@ -8,10 +8,10 @@ import {environment} from '../../environments/environment';
 })
 export class DocumentProfileService {
   private apiUrl = `${environment.apiUrl}/document-profile`;
-
+  private category = 1;
   constructor(private http: HttpClient) {}
 
   getDocumentByProfile(profileId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/profile/${profileId}`);
+    return this.http.get<any>(`${this.apiUrl}/profile/${profileId}/category/${this.category}`);
   }
 }

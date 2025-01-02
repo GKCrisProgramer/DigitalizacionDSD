@@ -6,7 +6,7 @@ import { DocumentProcedureDeparmentService } from '../../services/mproc-departme
 @Component({
   selector: 'app-mproc-deparment',
   templateUrl: './mproc-deparment.component.html',
-  styleUrl: './mproc-deparment.component.css'
+  styleUrls: ['./mproc-deparment.component.css']
 })
 export class ManualprocDeparmentComponent implements OnInit{
   document: any;

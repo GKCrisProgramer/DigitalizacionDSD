@@ -6,7 +6,7 @@ import { DocumentProcedureProceduraService } from '../../services/mproc-profile.
 @Component({
   selector: 'app-mproc-profile',
   templateUrl: './mproc-profile.component.html',
-  styleUrl: './mproc-profile.component.css'
+  styleUrls: ['./mproc-profile.component.css']
 })
 export class ManualProcProfileComponent implements OnInit{
   document: any;

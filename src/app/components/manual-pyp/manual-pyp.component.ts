@@ -70,19 +70,15 @@ export class ManualPYPComponent implements OnInit {
   }
 
   onProfileSelected(profileId: number) {
-    const url = `/profile/${profileId}`;
-    
-    const option = 
-    'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,top=100,left=100,width=800,height=600';
-    window.open(url, '_blank', option);
+    const url = `${window.location.origin}/profilePYP/${profileId}`;
+    const options = 'toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,fullscreen=yes';
+    window.open(url, '_blank' , options	);
   }
   
   onDepartmentSelected(departmentId: number) {
-    const url = `/department/${departmentId}`;
-
-    const option = 
-    'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,top=100,left=100,width=800,height=600';
-    window.open(url, '_blank', option); 
+    const url = `${window.location.origin}/departmentPYP/${departmentId}`;
+    const options = 'toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,fullscreen=yes';
+    window.open(url, '_blank' , options);
   }
 
   goBack() {

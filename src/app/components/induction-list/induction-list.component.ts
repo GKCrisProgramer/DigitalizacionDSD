@@ -41,10 +41,10 @@ export class InductionListComponent implements OnInit{
   }
 
   onDocumentSelected(documentId: number){
-    const url = `/Cursos-Induccion/${documentId}`;
+    const url = `${window.location.origin}/Cursos-Induccion/${documentId}`;
 
     const option = 
-    'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes';
+    'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,fullscreen=yes';
     window.open(url, '_blank', option); 
   }
 

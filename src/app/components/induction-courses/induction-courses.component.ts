@@ -6,7 +6,7 @@ import { InductionCoursesService } from '../../services/induction-courses.servic
 @Component({
   selector: 'app-induction-courses',
   templateUrl: './induction-courses.component.html',
-  styleUrl: './induction-courses.component.css'
+  styleUrls: ['./induction-courses.component.css']
 })
 export class InductionCoursesComponent implements OnInit{
   document: any;

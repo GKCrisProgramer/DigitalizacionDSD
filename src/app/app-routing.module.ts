@@ -28,8 +28,8 @@ const routes: Routes = [
   { path: 'manual-detail', component: ManualPYPComponent },
   { path: 'ProfileList', component: PerfilesComponent },
 
-  { path: 'department/:departmentId', component:PypDepartmentComponent },
-  { path: 'profile/:profileId', component: PypProfileComponent },
+  { path: 'departmentPYP/:departmentId', component:PypDepartmentComponent },
+  { path: 'profilePYP/:profileId', component: PypProfileComponent },
 
   { path: 'ProcedimientosList', component: ManualProcListComponent },
   { path: 'ProcedimientosProfile/:profileId', component: ManualProcProfileComponent },

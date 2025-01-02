@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-pyp-profile',
   templateUrl: './pyp-profile.component.html',
-  styleUrl: './pyp-profile.component.css'
+  styleUrls: ['./pyp-profile.component.css']
 })
 export class PypProfileComponent implements OnInit{
   document: any;
