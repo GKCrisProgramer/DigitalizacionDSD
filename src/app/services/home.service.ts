@@ -9,9 +9,9 @@ import { environment } from '../../environments/environment';
 export class HomeService {
   constructor(private http: HttpClient) {}
 
-  searchProfilesAndDocuments(query: string): Observable<any[]> {
+  searchProfilesCoursesAndDepartmentsWithDocuments(query: string): Observable<any[]> {
     return this.http.get<any[]>(
-      `${environment.apiUrl}/document-profile/searchProfilesAndDocuments?q=${query}`
+      `${environment.apiUrl}/seeker?q=${query}`
     );
   }
 }
