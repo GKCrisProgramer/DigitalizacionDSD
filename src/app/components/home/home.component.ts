@@ -46,7 +46,7 @@ export class HomeComponent {
           console.log("entro a case 2");
           break;
         case 3 :
-          const url3 = `${window.location.origin}/departmentPYP/${id}`;
+          const url3 = `${window.location.origin}/ProcedimientosProfile/${id}`;
           window.open(url3, '_blank', options);
           break;
         default:
@@ -55,7 +55,7 @@ export class HomeComponent {
     } else if (type === 'department') {
       switch (category) {
         case 1:
-          const url1 = `${window.location.origin}/ProcedimientosProfile/${id}`;
+          const url1 = `${window.location.origin}/departmentPYP/${id}`;
           window.open(url1, '_blank', options);
           break;
         case 2:
