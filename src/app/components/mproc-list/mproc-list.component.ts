@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CreateListService } from '../../services/CreateList.service';
-
+import { windowOption } from '../../../global-settings/window-option';
 
 @Component({
   selector: 'app-mproc-list',
@@ -67,18 +67,12 @@ export class ManualProcListComponent implements OnInit{
 
   onProfileSelected(profileId: number){
     const url = `${window.location.origin}/ProcedimientosProfile/${profileId}`;
-    
-    const option = 
-    'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,fullscreen=yes';
-    window.open(url, '_blank', option);
+    window.open(url, '_blank', windowOption.options);
   }
 
   onDepartmentSelected(departmentId: number) {
     const url = `${window.location.origin}/ProcedimientosDepartment/${departmentId}`;
-
-    const option = 
-    'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,fullscreen=yes';
-    window.open(url, '_blank', option); 
+    window.open(url, '_blank', windowOption.options); 
   }
 
   goBack() {

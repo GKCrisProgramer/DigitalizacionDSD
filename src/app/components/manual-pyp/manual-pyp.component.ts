@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CreateListService } from '../../services/CreateList.service';
+import { windowOption } from '../../../global-settings/window-option';
 
 @Component({
   selector: 'app-manual-pyp',
@@ -70,20 +71,13 @@ export class ManualPYPComponent implements OnInit {
   }
 
   onProfileSelected(profileId: number) {
-    const screenAvailWidth = window.screen.availWidth;
-    const screenAvailHeight = window.screen.availHeight;
-    console.log(screenAvailWidth, screenAvailHeight);
     const url = `${window.location.origin}/profilePYP/${profileId}`;
-    const options = `toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${screenAvailWidth},height=${screenAvailHeight}`;
-    window.open(url, '_blank' , options	);
+    window.open(url, '_blank' , windowOption.options);
   }
   
   onDepartmentSelected(departmentId: number) {
-    const screenAvailWidth = window.screen.availWidth;
-    const screenAvailHeight = window.screen.availHeight;
     const url = `${window.location.origin}/departmentPYP/${departmentId}`;
-    const options = `toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${screenAvailWidth},height=${screenAvailHeight}`;
-    window.open(url, '_blank' , options);
+    window.open(url, '_blank' , windowOption.options);
   }
 
   goBack() {

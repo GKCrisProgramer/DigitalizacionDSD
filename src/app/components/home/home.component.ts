@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { HomeService } from '../../services/home.service';
 import { debounceTime } from 'rxjs';
+import { windowOption } from '../../../global-settings/window-option';
 
 @Component({
   selector: 'app-home',
@@ -34,23 +35,19 @@ export class HomeComponent {
     const id = event.value?.value.id;  
     const type = event.value?.value.type;
     const category = event.value?.value.categoryId;
-    
-    const screenAvailWidth = window.screen.availWidth;
-    const screenAvailHeight = window.screen.availHeight; 
-    const options = `toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${screenAvailWidth},height=${screenAvailHeight}`;
 
     if (type === 'profile') {
       switch (category) {
         case 1:
           const url1 = `${window.location.origin}/profilePYP/${id}`;
-          window.open(url1, '_blank', options);
+          window.open(url1, '_blank', windowOption.options);
           break;
         case 2:
           console.log("entro a case 2");
           break;
         case 3 :
           const url3 = `${window.location.origin}/ProcedimientosProfile/${id}`;
-          window.open(url3, '_blank', options);
+          window.open(url3, '_blank', windowOption.options);
           break;
         default:
           break;
@@ -59,21 +56,21 @@ export class HomeComponent {
       switch (category) {
         case 1:
           const url1 = `${window.location.origin}/departmentPYP/${id}`;
-          window.open(url1, '_blank', options);
+          window.open(url1, '_blank', windowOption.options);
           break;
         case 2:
           console.log("entro a case 2");
           break;
         case 3 :
           const url3 = `${window.location.origin}/ProcedimientosDepartment/${id}`;
-          window.open(url3, '_blank', options);
+          window.open(url3, '_blank', windowOption.options);
           break;
         default:
           break;
       }
     } else if (type === 'course') {
       const url = `${window.location.origin}/Cursos-Induccion/${id}`;
-      window.open(url, '_blank', options);
+      window.open(url, '_blank', windowOption.options);
     }
   }
 
