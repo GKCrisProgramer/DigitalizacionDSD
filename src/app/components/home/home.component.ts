@@ -33,8 +33,11 @@ export class HomeComponent {
   onItemSelect(event: any) {
     const id = event.value?.value.id;  
     const type = event.value?.value.type;
-    const category = event.value?.value.categoryId; 
-    const options = 'toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,fullscreen=yes';
+    const category = event.value?.value.categoryId;
+    
+    const screenAvailWidth = window.screen.availWidth;
+    const screenAvailHeight = window.screen.availHeight; 
+    const options = `toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${screenAvailWidth},height=${screenAvailHeight}`;
 
     if (type === 'profile') {
       switch (category) {

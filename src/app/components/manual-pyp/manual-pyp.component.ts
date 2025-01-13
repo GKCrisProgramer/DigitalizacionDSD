@@ -70,14 +70,19 @@ export class ManualPYPComponent implements OnInit {
   }
 
   onProfileSelected(profileId: number) {
+    const screenAvailWidth = window.screen.availWidth;
+    const screenAvailHeight = window.screen.availHeight;
+    console.log(screenAvailWidth, screenAvailHeight);
     const url = `${window.location.origin}/profilePYP/${profileId}`;
-    const options = 'toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,fullscreen=yes';
+    const options = `toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${screenAvailWidth},height=${screenAvailHeight}`;
     window.open(url, '_blank' , options	);
   }
   
   onDepartmentSelected(departmentId: number) {
+    const screenAvailWidth = window.screen.availWidth;
+    const screenAvailHeight = window.screen.availHeight;
     const url = `${window.location.origin}/departmentPYP/${departmentId}`;
-    const options = 'toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,fullscreen=yes';
+    const options = `toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${screenAvailWidth},height=${screenAvailHeight}`;
     window.open(url, '_blank' , options);
   }
 

@@ -6,7 +6,7 @@
 }
 
 .pdf-center{
-  align-items: center;
+  place-items: center;
   margin: 0 30px;
 }
   

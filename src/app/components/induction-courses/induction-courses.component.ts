@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { InductionCoursesService } from '../../services/induction-courses.service';
@@ -8,7 +8,7 @@ import { InductionCoursesService } from '../../services/induction-courses.servic
   templateUrl: './induction-courses.component.html',
   styleUrls: ['./induction-courses.component.css']
 })
-export class InductionCoursesComponent implements OnInit{
+export class InductionCoursesComponent implements AfterViewInit{
   document: any;
   documentId!: number;
   documentRoute!: SafeResourceUrl; // URL segura
@@ -19,7 +19,7 @@ export class InductionCoursesComponent implements OnInit{
     private inductionCoursesService: InductionCoursesService,
   ) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.documentId = Number(this.route.snapshot.paramMap.get('documentId')!);
   
     this.inductionCoursesService.getDocument(this.documentId).subscribe((doc) => {
