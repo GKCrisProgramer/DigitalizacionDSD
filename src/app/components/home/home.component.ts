@@ -5,6 +5,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { HomeService } from '../../services/home.service';
 import { debounceTime } from 'rxjs';
 import { windowOption } from '../../../global-settings/window-option';
+import { DocumentType } from '../../../global-settings/enum';
 
 @Component({
   selector: 'app-home',
@@ -36,7 +37,7 @@ export class HomeComponent {
     const type = event.value?.value.type;
     const category = event.value?.value.categoryId;
 
-    if (type === 'profile') {
+    if (type === DocumentType.Profile) {
       switch (category) {
         case 1:
           const url1 = `${window.location.origin}/profilePYP/${id}`;
@@ -52,7 +53,7 @@ export class HomeComponent {
         default:
           break;
       }
-    } else if (type === 'department') {
+    } else if (type ===  DocumentType.Department) {
       switch (category) {
         case 1:
           const url1 = `${window.location.origin}/departmentPYP/${id}`;
@@ -68,7 +69,7 @@ export class HomeComponent {
         default:
           break;
       }
-    } else if (type === 'course') {
+    } else if (type === DocumentType.Course) {
       const url = `${window.location.origin}/Cursos-Induccion/${id}`;
       window.open(url, '_blank', windowOption.options);
     }
