@@ -1,6 +1,5 @@
-/*contenedor del pdf en cuestion*/
 .pdf-container {
-  height: 80vh; /* Ocupa la mayor parte de la pantalla */
+  height: 80vh;
   overflow-y: auto;
   align-items: center;
   display: block;
@@ -10,7 +9,6 @@
   text-align: center;
 }
 
-/*Botones de accion*/
 .action-buttons {
   display: flex;
   flex-direction: column;

@@ -10,9 +10,9 @@ export class OrganizationChartPrezi3Component {
   constructor(private router: Router) {}
 
   goBack(){
-    this.router.navigate(['/org-list']) // Navega a la pantalla de inicio
+    this.router.navigate(['/org-list']);
   }
   goHome() {
-    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+    this.router.navigate(['/home']); 
   }
 }

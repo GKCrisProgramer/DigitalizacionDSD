@@ -4,6 +4,7 @@
     top: 20px;
     left: 20px;
 }
+
 .logo:hover{
     cursor: pointer;
 }
@@ -12,7 +13,6 @@
     width: 100%;
 }
 
-/* Enlace "Volver" en la parte inferior izquierda */
 .back-link {
     position: absolute;
     bottom: 10px;

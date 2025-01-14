@@ -4,7 +4,6 @@
     margin-top: 20px;
 }
 
-/*Logo de la parte superior*/
 .logo {
     width: 100px;
     position: absolute;
@@ -18,8 +17,8 @@
   
 .navbar-container {
     width: 100%;
-    overflow-x: auto; /* Habilitar el scroll horizontal */
-    white-space: nowrap; /* Evitar que los botones se vayan a la siguiente línea */
+    overflow-x: auto; 
+    white-space: nowrap;
     margin: 5px;
     margin-top: 25px;
     padding: 10px;
@@ -30,7 +29,7 @@
 }
   
 .nav-item {
-    display: inline-block; /* Mostrar los elementos en línea */
+    display: inline-block;
 }
 
 .nav-link-btn-btn-link{
@@ -42,7 +41,6 @@
     background-color: #DEA236;
     cursor: pointer;
 }
-    
   
 .pdf-viewer iframe {
     border: none;
@@ -52,7 +50,6 @@
     width: 100%;
 }
 
-/* Enlace "Volver" en la parte inferior izquierda */
 .back-link {
     position: absolute;
     bottom: 10px;

@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="org-prezi3.component.css">
-</head>
-<body>
-    <body>
-        <div>
-            <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
-        </div>
-        <p class="center">
-            <iframe src="https://prezi.com/p/embed/tul78dTIF2rGgxcZ3h87/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="600" width="1200"></iframe>
-        </p>
-    </body>
-    <footer>
-        <!--Boton de volver-->
-        <a (click)="goBack()" class="back-link">← Volver</a>
-    </footer>
-</body>
-</html>
+<div>
+    <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
+</div>
+<p class="center">
+    <iframe src="https://prezi.com/p/embed/tul78dTIF2rGgxcZ3h87/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="600" width="1200"></iframe>
+</p>
+<footer>
+    <a (click)="goBack()" class="back-link">← Volver</a>
+</footer>

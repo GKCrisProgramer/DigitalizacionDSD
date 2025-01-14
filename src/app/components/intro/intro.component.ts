@@ -10,9 +10,9 @@ export class IntroComponent {
   constructor(private router: Router) {}
 
   goBack() {
-    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+    this.router.navigate(['/home']); 
   }
   goHome() {
-    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+    this.router.navigate(['/home']);  
   }
 }

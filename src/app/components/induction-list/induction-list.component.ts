@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';
+import { InductionListService } from '../../services/induction-list.service';
 
 @Component({
   selector: 'app-induction-list',
@@ -13,10 +12,13 @@ export class InductionListComponent implements OnInit{
   documentsByCourse: { [key: number]: any[] } = {};
   expandedCourse: number | null = null;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private inductionListService: InductionListService, 
+    private router: Router,
+  ) {}
 
   ngOnInit(){
-    this.http.get<any[]>(`${environment.apiUrl}/course`).subscribe(data =>{
+    this.inductionListService.getCourse().subscribe(data =>{
       this.course = data;
     });
   }
@@ -33,7 +35,7 @@ export class InductionListComponent implements OnInit{
   }
 
   getDocumentsByCourse(documentId: number){
-    this.http.get<any[]>(`${environment.apiUrl}/course-document/${documentId}/document`).subscribe(data =>{
+    this.inductionListService.getDocumentsByCourse(documentId).subscribe(data =>{
       this.documentsByCourse[documentId] = data;
     });
   }

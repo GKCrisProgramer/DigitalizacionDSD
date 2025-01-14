@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AutoCompleteModule } from 'primeng/autocomplete';
-import {environment} from '../../../environments/environment';
+import { HomeService } from '../../services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -16,27 +15,22 @@ export class HomeComponent {
   searchTerm: string = '';
   filteredData: any[] = [];
 
-  constructor(
-    private router: Router,
-    private http: HttpClient
-  ) {}
+  constructor(private router: Router, private homeService: HomeService) {}
 
   search(event: any) {
     const query = event.query;
-
-    this.http
-      .get<any[]>(`${environment.apiUrl}/document-profile/searchProfilesAndDocuments?q=${query}`)
-      .subscribe((data) => {
-        this.filteredData = data.map((item) => ({
-          label: `${item.profileName} > ${item.documentName || 'Sin manual relacionado'}`,
-          value: item.profileId, // Puede usarse para redirigir o realizar acciones específica
-        }));
-      });
+    this.homeService.searchProfilesAndDocuments(query).subscribe((data) => {
+      this.filteredData = data.map((item) => ({
+        label: `${item.profileName} > ${item.documentName || 'Sin manual relacionado'}`,
+        value: item.profileId,
+      }));
+    });
   }
 
+
   onItemSelect(event: any) {
-    const profileId = event.value?.value; // Accede explícitamente al ID
-    this.router.navigate(['/profile/', profileId]); // Redirige al componente de perfil
+    const profileId = event.value?.value; 
+    this.router.navigate(['/profile/', profileId]); 
   }
 
   goToManualList() {

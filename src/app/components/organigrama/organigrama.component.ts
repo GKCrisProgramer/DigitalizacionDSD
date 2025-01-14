@@ -13,24 +13,23 @@ import { categoryColors } from './functions/category-colors';
   styleUrl: './organigrama.component.css'
 })
 export class OrganigramaComponent implements AfterViewInit {
-  deparments: any[] = []; // Lista de departamentos
-  documentRoute: SafeResourceUrl | null = null; // Permitir que sea null
-  message: string = ''; // Mensaje para mostrar si no hay documentos
-  // Ruta segura para el visor de PDF
+  deparments: any[] = []; 
+  documentRoute: SafeResourceUrl | null = null; 
+  message: string = '';
 
   constructor(
     private router: Router,
-    private departmentDocumentService: DepartmentDocumentService, // Servicio para obtener datos
-    private sanitizer: DomSanitizer, // Para convertir las URLs en rutas seguras
+    private departmentDocumentService: DepartmentDocumentService, 
+    private sanitizer: DomSanitizer,
     private http: HttpClient
   ) {}
 
   goHome() {
-    this.router.navigate(['/home']);  // Cambia '/home' según la ruta deseada
+    this.router.navigate(['/home']);
   }
 
   goBack() {
-    this.router.navigate(['/org-list']);  // Cambia '/home' según la ruta deseada
+    this.router.navigate(['/org-list']);
   }
 
   @ViewChild('diagramDiv', { static: true }) diagramDiv!: ElementRef;
@@ -97,7 +96,6 @@ export class OrganigramaComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const diagram = this.initDiagram();
-    // Ejemplo de nodos para probar el diagrama
     diagram.model = new go.TreeModel([
 
       { key: 1, name: 'Consejo de Administración', category: 'VMOM' },
