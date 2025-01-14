@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { InductionListService } from '../../services/induction-list.service';
+import { windowOption } from '../../../global-settings/window-option';
 
 @Component({
   selector: 'app-induction-list',
@@ -41,7 +42,8 @@ export class InductionListComponent implements OnInit{
   }
 
   onDocumentSelected(documentId: number){
-    this.router.navigate(['/Cursos-Induccion/', documentId])
+    const url = `${window.location.origin}/Cursos-Induccion/${documentId}`;
+    window.open(url, '_blank', windowOption.options); 
   }
 
   goBack() {

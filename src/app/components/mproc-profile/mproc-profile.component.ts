@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { DocumentProcedureProceduraService } from '../../services/mproc-profile.service';
 
 @Component({
   selector: 'app-mproc-profile',
   templateUrl: './mproc-profile.component.html',
-  styleUrl: './mproc-profile.component.css'
+  styleUrls: ['./mproc-profile.component.css']
 })
 export class ManualProcProfileComponent implements OnInit{
   document: any;
@@ -15,14 +15,9 @@ export class ManualProcProfileComponent implements OnInit{
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private documentProcedureProceduraService: DocumentProcedureProceduraService,
     private sanitizer: DomSanitizer,
   ) { }
-
-  goBack() {
-    this.router.navigate(['/home']);
-  }
 
   ngOnInit(): void {
 

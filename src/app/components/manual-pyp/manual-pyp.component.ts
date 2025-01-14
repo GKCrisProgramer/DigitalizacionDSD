@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CreateListService } from '../../services/CreateList.service';
+import { windowOption } from '../../../global-settings/window-option';
 
 @Component({
   selector: 'app-manual-pyp',
@@ -70,11 +71,13 @@ export class ManualPYPComponent implements OnInit {
   }
 
   onProfileSelected(profileId: number) {
-    this.router.navigate(['/profile/', profileId]);
+    const url = `${window.location.origin}/profilePYP/${profileId}`;
+    window.open(url, '_blank' , windowOption.options);
   }
-
+  
   onDepartmentSelected(departmentId: number) {
-    this.router.navigate(['/department/', departmentId]);
+    const url = `${window.location.origin}/departmentPYP/${departmentId}`;
+    window.open(url, '_blank' , windowOption.options);
   }
 
   goBack() {

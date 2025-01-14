@@ -1,29 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { DocumentProcedureDeparmentService } from '../../services/mproc-department.service';
 
 @Component({
   selector: 'app-mproc-deparment',
   templateUrl: './mproc-deparment.component.html',
-  styleUrl: './mproc-deparment.component.css'
+  styleUrls: ['./mproc-deparment.component.css']
 })
 export class ManualprocDeparmentComponent implements OnInit{
   document: any;
   departmentId!: number;
-  documentRoute!: SafeResourceUrl; // URL segura
+  documentRoute!: SafeResourceUrl; 
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private documentProcedureDeparmentService: DocumentProcedureDeparmentService,
     private sanitizer: DomSanitizer,
   ) { }
-
-  // Método para navegar a la página de detalle del manual
-  goBack() {
-    this.router.navigate(['/ProcedimientosList']);
-  }
 
   ngOnInit(): void {
 

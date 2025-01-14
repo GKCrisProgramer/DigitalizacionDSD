@@ -8,7 +8,7 @@ import {environment} from '../../environments/environment';
 })
 export class DepartmentDocumentService {
   private apiUrl = `${environment.apiUrl}/department-document`;
-
+  private category = 1;
   constructor(private http: HttpClient) {}
 
   getDepartments(): Observable<any[]> {
@@ -20,7 +20,7 @@ export class DepartmentDocumentService {
   }
 
   getDocumentByDepartmentInDetail(deparmentId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/department/${deparmentId}`);
+    return this.http.get<any>(`${this.apiUrl}/department/${deparmentId}/category/${this.category}`);
   }
 
 }

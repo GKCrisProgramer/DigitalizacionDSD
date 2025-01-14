@@ -1,30 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { InductionCoursesService } from '../../services/induction-courses.service';
 
 @Component({
   selector: 'app-induction-courses',
   templateUrl: './induction-courses.component.html',
-  styleUrl: './induction-courses.component.css'
+  styleUrls: ['./induction-courses.component.css']
 })
-export class InductionCoursesComponent implements OnInit{
+export class InductionCoursesComponent implements AfterViewInit{
   document: any;
   documentId!: number;
   documentRoute!: SafeResourceUrl; // URL segura
 
   constructor(
     private sanitizer: DomSanitizer,
-    private router: Router,
     private route: ActivatedRoute,
     private inductionCoursesService: InductionCoursesService,
   ) { }
 
-  goBack() {
-    this.router.navigate(['/Cursos-lista']);
-  }
-
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.documentId = Number(this.route.snapshot.paramMap.get('documentId')!);
   
     this.inductionCoursesService.getDocument(this.documentId).subscribe((doc) => {
