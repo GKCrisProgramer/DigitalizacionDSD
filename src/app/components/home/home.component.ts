@@ -40,14 +40,14 @@ export class HomeComponent {
     if (type === DocumentType.Profile) {
       switch (category) {
         case 1:
-          const url1 = `${window.location.origin}/profilePYP/${id}`;
+          const url1 = `${window.location.origin}/profile-description/${id}`;
           window.open(url1, '_blank', windowOption.options);
           break;
         case 2:
           console.log("entro a case 2");
           break;
         case 3 :
-          const url3 = `${window.location.origin}/ProcedimientosProfile/${id}`;
+          const url3 = `${window.location.origin}/procedimientosProfile/${id}`;
           window.open(url3, '_blank', windowOption.options);
           break;
         default:
@@ -56,21 +56,21 @@ export class HomeComponent {
     } else if (type ===  DocumentType.Department) {
       switch (category) {
         case 1:
-          const url1 = `${window.location.origin}/departmentPYP/${id}`;
+          const url1 = `${window.location.origin}/department-description/${id}`;
           window.open(url1, '_blank', windowOption.options);
           break;
         case 2:
           console.log("entro a case 2");
           break;
         case 3 :
-          const url3 = `${window.location.origin}/ProcedimientosDepartment/${id}`;
+          const url3 = `${window.location.origin}/procedimientosDepartment/${id}`;
           window.open(url3, '_blank', windowOption.options);
           break;
         default:
           break;
       }
     } else if (type === DocumentType.Course) {
-      const url = `${window.location.origin}/Cursos-Induccion/${id}`;
+      const url = `${window.location.origin}/cursos-Induccion/${id}`;
       window.open(url, '_blank', windowOption.options);
     }
   }
