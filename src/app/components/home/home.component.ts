@@ -40,7 +40,7 @@ export class HomeComponent {
     if (type === DocumentType.Profile) {
       switch (category) {
         case 1:
-          const url1 = `${window.location.origin}/profilePYP/${id}`;
+          const url1 = `${window.location.origin}/profile-description/${id}`;
           window.open(url1, '_blank', windowOption.options);
           break;
         case 2:
@@ -56,7 +56,7 @@ export class HomeComponent {
     } else if (type ===  DocumentType.Department) {
       switch (category) {
         case 1:
-          const url1 = `${window.location.origin}/departmentPYP/${id}`;
+          const url1 = `${window.location.origin}/department-description/${id}`;
           window.open(url1, '_blank', windowOption.options);
           break;
         case 2:
