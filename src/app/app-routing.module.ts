@@ -31,11 +31,11 @@ const routes: Routes = [
   { path: 'department-description/:departmentId', component:PypDepartmentComponent },
   { path: 'profile-description/:profileId', component: PypProfileComponent },
 
-  { path: 'ProcedimientosList', component: ManualProcListComponent },
-  { path: 'ProcedimientosProfile/:profileId', component: ManualProcProfileComponent },
+  { path: 'procedimientosList', component: ManualProcListComponent },
+  { path: 'procedimientosProfile/:profileId', component: ManualProcProfileComponent },
   { path: 'ProcedimientosDepartment/:departmentId', component: ManualprocDeparmentComponent },
   { path: 'Cursos-lista', component: InductionListComponent },
-  { path: 'Cursos-Induccion/:documentId', component: InductionCoursesComponent },
+  { path: 'cursos-Induccion/:documentId', component: InductionCoursesComponent },
 
   { path: 'org-list', component: OrgListComponent },
   { path: 'organization-chart', component: OrganigramaComponent },

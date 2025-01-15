@@ -47,7 +47,7 @@ export class HomeComponent {
           console.log("entro a case 2");
           break;
         case 3 :
-          const url3 = `${window.location.origin}/ProcedimientosProfile/${id}`;
+          const url3 = `${window.location.origin}/procedimientosProfile/${id}`;
           window.open(url3, '_blank', windowOption.options);
           break;
         default:
@@ -63,14 +63,14 @@ export class HomeComponent {
           console.log("entro a case 2");
           break;
         case 3 :
-          const url3 = `${window.location.origin}/ProcedimientosDepartment/${id}`;
+          const url3 = `${window.location.origin}/procedimientosDepartment/${id}`;
           window.open(url3, '_blank', windowOption.options);
           break;
         default:
           break;
       }
     } else if (type === DocumentType.Course) {
-      const url = `${window.location.origin}/Cursos-Induccion/${id}`;
+      const url = `${window.location.origin}/cursos-Induccion/${id}`;
       window.open(url, '_blank', windowOption.options);
     }
   }
