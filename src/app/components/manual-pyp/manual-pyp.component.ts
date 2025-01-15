@@ -71,12 +71,12 @@ export class ManualPYPComponent implements OnInit {
   }
 
   onProfileSelected(profileId: number) {
-    const url = `${window.location.origin}/profilePYP/${profileId}`;
+    const url = `${window.location.origin}/profile-description/${profileId}`;
     window.open(url, '_blank' , windowOption.options);
   }
   
   onDepartmentSelected(departmentId: number) {
-    const url = `${window.location.origin}/departmentPYP/${departmentId}`;
+    const url = `${window.location.origin}/department-description/${departmentId}`;
     window.open(url, '_blank' , windowOption.options);
   }
 

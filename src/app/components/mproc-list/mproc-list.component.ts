@@ -66,7 +66,7 @@ export class ManualProcListComponent implements OnInit{
   }
 
   onProfileSelected(profileId: number){
-    const url = `${window.location.origin}/ProcedimientosProfile/${profileId}`;
+    const url = `${window.location.origin}/procedimientosProfile/${profileId}`;
     window.open(url, '_blank', windowOption.options);
   }
 

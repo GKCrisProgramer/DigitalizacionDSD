@@ -63,7 +63,7 @@ export class HomeComponent {
           console.log("entro a case 2");
           break;
         case 3 :
-          const url3 = `${window.location.origin}/procedimientosDepartment/${id}`;
+          const url3 = `${window.location.origin}/ProcedimientosDepartment/${id}`;
           window.open(url3, '_blank', windowOption.options);
           break;
         default:
@@ -100,7 +100,7 @@ export class HomeComponent {
   }
 
   goToProcedures(){
-    this.router.navigate(['/ProcedimientosList'])
+    this.router.navigate(['/procedimientosList'])
   }
 
   goToInductionCourses(){

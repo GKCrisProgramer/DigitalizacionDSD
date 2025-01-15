@@ -11,7 +11,7 @@ import { InductionCoursesService } from '../../services/induction-courses.servic
 export class InductionCoursesComponent implements AfterViewInit{
   document: any;
   documentId!: number;
-  documentRoute!: SafeResourceUrl; // URL segura
+  documentRoute!: SafeResourceUrl;
 
   constructor(
     private sanitizer: DomSanitizer,

@@ -42,7 +42,7 @@ export class InductionListComponent implements OnInit{
   }
 
   onDocumentSelected(documentId: number){
-    const url = `${window.location.origin}/Cursos-Induccion/${documentId}`;
+    const url = `${window.location.origin}/cursos-Induccion/${documentId}`;
     window.open(url, '_blank', windowOption.options); 
   }
 
