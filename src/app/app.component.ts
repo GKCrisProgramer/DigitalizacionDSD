@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { excludedRoutes, currentPath } from '../global-settings/screem-path';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,10 @@ export class AppComponent {
 
   @HostListener('window:beforeunload', ['$event'])
   beforeUnloadHandler(event: BeforeUnloadEvent) {
-    localStorage.removeItem('authToken');  
-    event.preventDefault();  
-    event.returnValue = '';
+    if (excludedRoutes.excluded.includes(currentPath.path)) {
+      localStorage.removeItem('authToken');  
+      event.preventDefault();  
+      event.returnValue = '';
+    }
   }
 }
