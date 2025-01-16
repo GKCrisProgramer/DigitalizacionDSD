@@ -1,0 +1,47 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Build Docker image
+        run: |
+          docker build -t josejaguirre/manual-app:latest .
+
+      - name: Push Docker image
+        run: |
+          docker push josejaguirre/manual-app:latest
+
+      - name: Update image on remote server
+        env:
+          HOST: ${{ vars.MANUAL_HOST }}
+          USER: ${{ vars.MANUAL_ROOT_USER }}
+          PASSWORD: ${{ secrets.MANUAL_ROOT_PASSWORD }}
+          API_HOST: ${{ vars.MANUAL_API_HOST }}
+        run: |
+          sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no $USER@$HOST << EOF
+            docker pull josejaguirre/manual-app:latest
+            docker stop manual-app || true
+            docker rm manual-app || true
+            docker run -d \
+              --name manual-app \
+              --network manual_network \
+              -e API_HOST=$API_HOST \
+              -p 80:80 \
+              --restart always \
+              josejaguirre/manual-app:latest
+          EOF

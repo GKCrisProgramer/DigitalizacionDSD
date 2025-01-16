@@ -1,0 +1,13 @@
+.pdf-container {
+  height: 80vh;
+  overflow-y: auto;
+  align-items: center;
+  display: block;
+}
+
+.pdf-center{
+  place-items: center;
+  margin: 0 30px;
+}
+
+  

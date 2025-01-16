@@ -1,0 +1,20 @@
+<div class="manual-list-container">
+  <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
+    
+  <div class="manual-list">
+    <button class="manual-button" (click)="goToManualDetail()">Manual de Descriptivos y perfiles de puesto</button>
+    <button class="manual-button">Manual de políticas y procedimientos</button>
+    <button class="manual-button">Manual de políticas</button>
+    <button class="manual-button"(click)="goToStart()">Volver</button>
+  </div>
+    
+  <div class="manual-actions">
+    <button class="action-button">Descargar</button>
+    <select class="manual-select">
+      <option value="" disabled selected>Seleccione Manual</option>
+      <option value="1">Manual de Descriptivos y perfiles de puesto</option>
+      <option value="2">Manual de políticas y procedimientos</option>
+      <option value="3">Manual de políticas</option>
+    </select>
+  </div>
+</div>      

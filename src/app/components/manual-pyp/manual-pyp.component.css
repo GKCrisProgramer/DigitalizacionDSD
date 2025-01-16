@@ -1,0 +1,107 @@
+.manual-detail-container {
+  padding: 20px;
+  text-align: left;
+  position: relative;
+}
+  
+.logo {
+  width: 80px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logo:hover{
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 48px;
+  margin-top: 80px;
+  align-items: center;
+}
+  
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+  
+.index {
+  margin-bottom: 40px;
+}
+  
+.index h3 {
+  font-size: 24px;
+}
+  
+.index ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.index ul:hover{
+  cursor: pointer;
+}
+  
+.index li {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.index li:hover{
+  cursor: pointer;
+}
+
+.index_area {
+  padding: 5px 40px;
+}
+
+.index_area:hover{
+  color:blue;
+  cursor: pointer;
+}
+
+.index_area_level1 {
+  padding: 5px 60px;
+}
+
+.index_area_level1:hover{
+  color:blue;
+}
+
+.index_area_level1N{
+  padding: 5px 60px;
+  font-weight: bold;
+}
+
+.index_area_level1N:hover{
+  color:blue;
+}
+
+.index_area_level2 {
+  padding: 5px 80px;
+}
+
+.index_area_level2:hover{
+  color:blue;
+}
+
+.manual-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+  
+.action-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #e0e0e0;
+  font-size: 16px;
+  box-shadow: 0px 0px 5px 0px #333;
+}  
+
+.action-button:hover{
+  cursor: pointer;
+  background-color: #999;
+  box-shadow: 0px 0px 10px 0px #333;
+}

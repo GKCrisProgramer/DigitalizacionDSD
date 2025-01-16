@@ -1,0 +1,37 @@
+<div class="manual-detail-container">
+  <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
+    
+  <h1 class="center">Manual de Descriptivos y Perfiles de Puesto</h1>
+  <h2>Índice</h2>
+  <div class="index">
+    <div *ngFor="let area of areas">
+      <h3 (click)="toggleArea(area.areaId)" class="index_area">
+        {{ area.areaName }}
+      </h3>
+    
+      <ul *ngIf="expandedArea === area.areaId && profilesByArea[area.areaId]?.length">
+        <li *ngFor="let profile of profilesByArea[area.areaId]" (click)="onProfileSelected(profile.profileId)" class="index_area_level1">
+          {{ profile.profileName }}
+        </li>
+      </ul>
+    
+      <ul *ngIf="expandedArea === area.areaId">
+        <li *ngFor="let department of departmentsByArea[area.areaId]" >
+          <div (click)="toggleDepartment(department.departmentId)" class="index_area_level1N">
+            {{ department.departmentName }}
+          </div>
+          
+          <ul *ngIf="profilesByDepartment[department.departmentId]">
+            <li (click)="onDepartmentSelected(department.departmentId)" class="index_area_level2">
+              {{ department.departmentName }} 
+            </li>
+            <li *ngFor="let profile of profilesByDepartment[department.departmentId]" 
+            (click)="onProfileSelected(profile.profileId)" class="index_area_level2">
+              {{ profile.profileName }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div> 
+</div>

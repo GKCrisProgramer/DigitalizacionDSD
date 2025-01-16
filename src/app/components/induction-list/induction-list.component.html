@@ -1,0 +1,18 @@
+<div class="manual-detail-container">
+    <img src="/logo.png" alt="Logo DSD" class="logo" (click)="goHome()">
+
+    <h1 class="center">Cursos de Induccion y Capacitacion</h1>
+    <h2>Índice</h2>
+    <div class="index">
+        <div *ngFor="let course of course">
+            <h3 (click)="toggleCourse(course.courseId)" class="index_area">
+                {{ course.courseName }}
+            </h3>
+            <ul *ngIf="expandedCourse === course.courseId && documentsByCourse[course.courseId]?.length">
+                <li *ngFor="let document of documentsByCourse[course.courseId]" (click)="onDocumentSelected(document.documentId)" class="index_area_level1">
+                    {{ document.documentName }}
+                </li>
+            </ul>
+        </div>
+    </div> 
+</div>

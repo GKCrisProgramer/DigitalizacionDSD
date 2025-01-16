@@ -1,0 +1,69 @@
+.organigrama-container {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.logo {
+    width: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo:hover{
+    cursor: pointer; 
+}
+  
+.navbar-container {
+    width: 100%;
+    overflow-x: auto; 
+    white-space: nowrap;
+    margin: 5px;
+    margin-top: 25px;
+    padding: 10px;
+}
+  
+.navbar-nav {
+    display: inline-block;
+}
+  
+.nav-item {
+    display: inline-block;
+}
+
+.nav-link-btn-btn-link{
+    background-color: #EFB347;
+    min-height: 60px;
+}
+
+.nav-link-btn-btn-link:hover{
+    background-color: #DEA236;
+    cursor: pointer;
+}
+  
+.pdf-viewer iframe {
+    border: none;
+}
+  
+.back{
+    width: 100%;
+}
+
+.back-link {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.OrgChart{
+    margin-top: 50px;
+}

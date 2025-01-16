@@ -1,0 +1,70 @@
+<div class="home-container">
+  <div class="home-logout">
+    <button (click)="logout()" class="logout-button">Logout</button>
+  </div>
+  <div class="Cont-mess">
+    <h1 class="welcome-message">Bienvenido al Manual Organizacional de DSD</h1>
+  </div>
+  <div class="image-section">
+
+    <div class="int-but">
+      <button class="image-button" (click)="goToIntro()">Introduccion</button>
+    </div>
+
+    <div>
+      <img src="/logo.png" alt="Imagen Representativa" class="main-image">
+    </div>
+
+    <div class="autocomplete-container">
+      <p-autoComplete
+        [(ngModel)]="searchTerm"
+        [suggestions]="filteredData"
+        (completeMethod)="search($event)"
+        field="label"
+        placeholder="Buscar Documentos"
+        (onSelect)="onItemSelect($event)"
+      >
+      </p-autoComplete>
+    </div>
+  </div>
+
+  <div class="subtitle-section">
+    <h2>Menú de Accesos</h2>
+  </div>
+  <div class="circular-buttons">
+    <div class="quick-access">
+      <button class="circular-button" (click)="goToOrganigrama()">
+        <img src="/organigrama.png" alt="icon" class="display-settings-icon">
+      </button>
+      <p class="txtb">Estructura Organizacional</p>
+    </div>
+    
+    <div class="quick-access">
+      <button class="circular-button" (click)="goToPYP()">
+        <img src="/panel-de-control.png" alt="icon" class="display-settings-icon">
+      </button>
+      <p class="txtb">Manual de Descriptivos y Perfiles de Puestos</p>
+    </div>
+    
+    <div class="quick-access">
+      <button class="circular-button" (click)="goToProcedures()">
+        <img src="/curriculum-vitae.png" alt="icon" class="display-settings-icon">
+      </button>
+      <p class="txtb">Manual de Procedimientos</p>
+    </div>
+    
+    <div class="quick-access">
+      <button class="circular-button">
+        <img src="/politica.png" alt="icon" class="display-settings-icon">
+      </button>
+      <p class="txtb">Manual de Políticas y Lineamientos</p>
+    </div>
+
+    <div class="quick-access">
+      <button class="circular-button" (click)="goToInductionCourses()">
+        <img src="/educacion.png" alt="icon" class="display-settings-icon">
+      </button>
+      <p class="txtb">Cursos de Capacitación</p>
+    </div>
+  </div>    
+</div>      
