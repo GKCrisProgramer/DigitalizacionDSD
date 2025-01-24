@@ -1,13 +1,13 @@
-export const excludedRoutes = {
+const excludedRoutes = {
     excluded: [
-        'procedimientosProfile/:profileId', 
-        'ProcedimientosDepartment/:departmentId', 
-        'cursos-Induccion/:documentId', 
-        'department-description/:departmentId', 
-        'profile-description/:profileId'
+        'procedimientosProfile', 
+        'ProcedimientosDepartment', 
+        'cursos-Induccion', 
+        'department-description', 
+        'profile-description'
     ]
 }
 
-export const currentPath = {
-    path: window.location.pathname,
+export function isRouteExcluded(currentRoute: string): boolean {
+    return excludedRoutes.excluded.some(route => currentRoute.includes(route));
 }

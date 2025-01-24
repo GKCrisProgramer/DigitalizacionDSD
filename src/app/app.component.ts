@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
-import { excludedRoutes, currentPath } from '../global-settings/screem-path';
+import { isRouteExcluded } from '../global-settings/screem-path';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,16 @@ import { excludedRoutes, currentPath } from '../global-settings/screem-path';
 })
 export class AppComponent {
   title = 'Digitalizacion';
+  constructor(private router: Router) {}
 
   @HostListener('window:beforeunload', ['$event'])
   beforeUnloadHandler(event: BeforeUnloadEvent) {
-    if (excludedRoutes.excluded.includes(currentPath.path)) {
-      localStorage.removeItem('authToken');  
-      event.preventDefault();  
-      event.returnValue = '';
+    const currentRoute = this.router.url;
+    if (!isRouteExcluded(currentRoute)) {
+      localStorage.removeItem('authToken');
     }
+
+    event.preventDefault();
+    event.returnValue = '';
   }
 }
