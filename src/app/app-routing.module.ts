@@ -22,30 +22,35 @@ import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'intro', component: IntroComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'manual-list', component: ManualListComponent },
-  { path: 'manual-detail', component: ManualPYPComponent },
-  { path: 'ProfileList', component: PerfilesComponent },
 
-  { path: 'department-description/:departmentId', component:PypDepartmentComponent },
-  { path: 'profile-description/:profileId', component: PypProfileComponent },
+  {
+    path: '',
+    canActivate: [AuthGuard], 
+    children: [
+      { path: 'intro', component: IntroComponent },
+      { path: 'home', component: HomeComponent},
+      { path: 'manual-list', component: ManualListComponent },
+      { path: 'manual-detail', component: ManualPYPComponent },
+      { path: 'ProfileList', component: PerfilesComponent },
+    
+      { path: 'department-description/:departmentId', component:PypDepartmentComponent },
+      { path: 'profile-description/:profileId', component: PypProfileComponent },
+    
+      { path: 'procedimientosList', component: ManualProcListComponent },
+      { path: 'procedimientosProfile/:profileId', component: ManualProcProfileComponent },
+      { path: 'ProcedimientosDepartment/:departmentId', component: ManualprocDeparmentComponent },
+      { path: 'Cursos-lista', component: InductionListComponent },
+      { path: 'cursos-Induccion/:documentId', component: InductionCoursesComponent },
+    
+      { path: 'org-list', component: OrgListComponent },
+      { path: 'organization-chart', component: OrganigramaComponent },
+      { path: 'org-PPTX', component: OrgPPTXComponent },
+      { path: 'org-Prezi2', component: OrganizationChartPrezi2Component },
+      { path: 'org-Prezi3', component: OrganizationChartPrezi3Component },
+    ]
+  },
 
-  { path: 'procedimientosList', component: ManualProcListComponent },
-  { path: 'procedimientosProfile/:profileId', component: ManualProcProfileComponent },
-  { path: 'ProcedimientosDepartment/:departmentId', component: ManualprocDeparmentComponent },
-  { path: 'Cursos-lista', component: InductionListComponent },
-  { path: 'cursos-Induccion/:documentId', component: InductionCoursesComponent },
-
-  { path: 'org-list', component: OrgListComponent },
-  { path: 'organization-chart', component: OrganigramaComponent },
-  { path: 'org-PPTX', component: OrgPPTXComponent },
-  { path: 'org-Prezi2', component: OrganizationChartPrezi2Component },
-  { path: 'org-Prezi3', component: OrganizationChartPrezi3Component },
-
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-
-  { path: '**', redirectTo: 'login' }, 
+  { path: '**', redirectTo: 'login' },
 
 ];
 
